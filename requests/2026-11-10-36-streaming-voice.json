@@ -1,0 +1,263 @@
+{
+  "action": "apply",
+  "status": "waiting",
+  "asked_by": "Dai",
+  "approved_by": "Dai",
+  "note": "one more Leafvella tester; new Streaming zone (live-now, clips, Streaming voice, Twitch rooms moved and renamed, Streamer and Stream Alerts roles, onboarding options); voice tidied (Lounge, new Gaming room, Movie Night, Dev Lounge, Private, best audio quality)",
+  "steps": [
+    {
+      "op": "give_role_by_name",
+      "role": "Leafvella Tester",
+      "name_hashes": [
+        "c0d19e4483571ff07cb01a4d3f5484102d7f333c4cafa64a2821f55031ea6041"
+      ]
+    },
+    {
+      "op": "create_role",
+      "name": "Streamer",
+      "colour": "#D7C9F2",
+      "hoist": false,
+      "permissions": [],
+      "below": "Stream Mod ☑️"
+    },
+    {
+      "op": "create_role",
+      "name": "Stream Alerts",
+      "hoist": false,
+      "mentionable": true,
+      "permissions": [],
+      "below": "Friends 💕"
+    },
+    {
+      "op": "create_channel",
+      "name": "🔴 STREAMING",
+      "type": "category"
+    },
+    {
+      "op": "create_channel",
+      "name": "🔴・live-now",
+      "parent_name": "🔴 STREAMING",
+      "position": 0,
+      "slowmode": 3600,
+      "topic": "Going live? Share your stream link here. One post per stream."
+    },
+    {
+      "op": "create_channel",
+      "name": "🎬・clips-and-highlights",
+      "parent_name": "🔴 STREAMING",
+      "position": 1,
+      "topic": "Best bits from streams: clips, highlights and funny moments."
+    },
+    {
+      "op": "create_channel",
+      "name": "🎙・Streaming",
+      "type": "voice",
+      "parent_name": "🔴 STREAMING",
+      "position": 2
+    },
+    {
+      "op": "edit_channel",
+      "id": "1498387612417790123",
+      "new_name": "🎧・Twitch Subs",
+      "parent_name": "🔴 STREAMING",
+      "position": 3
+    },
+    {
+      "op": "edit_channel",
+      "id": "1498380923794886848",
+      "new_name": "🎧・Tier 3 Subs",
+      "parent_name": "🔴 STREAMING",
+      "position": 4
+    },
+    {
+      "op": "edit_channel",
+      "id": "1498380649055260843",
+      "new_name": "🎧・Tier 2 Subs",
+      "parent_name": "🔴 STREAMING",
+      "position": 5
+    },
+    {
+      "op": "edit_channel",
+      "id": "1498379888674082876",
+      "new_name": "🎧・Tier 1 Subs",
+      "parent_name": "🔴 STREAMING",
+      "position": 6
+    },
+    {
+      "op": "edit_channel",
+      "id": "1386390344958087178",
+      "position": 0,
+      "bitrate": 96000
+    },
+    {
+      "op": "create_channel",
+      "name": "🎮・Gaming",
+      "type": "voice",
+      "parent_name": "🔊 VOICE",
+      "position": 1
+    },
+    {
+      "op": "edit_channel",
+      "id": "1429528402817450156",
+      "position": 2,
+      "bitrate": 96000
+    },
+    {
+      "op": "edit_channel",
+      "id": "1386723399887491164",
+      "position": 3,
+      "bitrate": 96000
+    },
+    {
+      "op": "edit_channel",
+      "id": "1386674154689790012",
+      "position": 4,
+      "bitrate": 96000
+    },
+    {
+      "op": "send_message",
+      "channel": "🔴・live-now",
+      "pin": true,
+      "embed": {
+        "title": "🔴 Live now",
+        "description": "Going live? Share it here, so everyone can come and cheer you on. 🔴\n\n**How it works**\n• Post your link when you go live: Twitch, YouTube, TikTok or anywhere else\n• One post per stream, please. Slowmode keeps it tidy\n• Want a ping when someone goes live? Pick **🔴 I watch streams** in Channels & Roles\n• Streamers can ping **@Stream Alerts** when they go live\n\n**Keep it friendly**\n• Streams shared here follow the server rules, so nothing 18+\n• Be kind in other people's chats, and support each other 💜\n\nClips and highlights go in {#🎬・clips-and-highlights}. For a Discord stream, use the 🎙 Streaming voice room and press Go Live.",
+        "colour": "#AE98DD",
+        "image": "brand/banners/streaming.png"
+      }
+    },
+    {
+      "op": "onboarding",
+      "default_channels": [
+        "📝・welcome-and-rules",
+        "📢・announcements",
+        "💬・general",
+        "🖼️・showcase",
+        "😂・memes-and-media",
+        "❓・ask-the-assistant",
+        "📅・daily-prompts",
+        "🔈・Lounge"
+      ],
+      "prompts": [
+        {
+          "title": "What brings you to Bowie's Workspace?",
+          "options": [
+            {
+              "title": "Hanging out with friends",
+              "description": "Chat, memes, games and voice",
+              "emoji": "💬",
+              "channels": [
+                "💬・general",
+                "😂・memes-and-media",
+                "🎮・games-and-shows",
+                "🥣・food",
+                "🔈・Lounge",
+                "🎮・Gaming",
+                "🎥・Movie Night"
+              ],
+              "roles": [
+                "Friends 💕"
+              ]
+            },
+            {
+              "title": "Following what Dai's building",
+              "description": "Portfolio and project updates",
+              "emoji": "💻",
+              "channels": [
+                "📁・dev-portfolio",
+                "💻・what-im-working-on",
+                "🌿・start-here",
+                "📢・updates"
+              ],
+              "roles": [
+                "Friends 💕"
+              ]
+            },
+            {
+              "title": "Leafvella",
+              "description": "Dai's app: updates, showcase and ideas, with news pings",
+              "emoji": "🍃",
+              "channels": [
+                "🌿・start-here",
+                "📢・updates",
+                "🎬・showcase",
+                "💡・ideas"
+              ],
+              "roles": [
+                "Friends 💕",
+                "Leafvella News"
+              ]
+            },
+            {
+              "title": "Bowie fan",
+              "description": "For the love of Bowie",
+              "emoji": "⚡",
+              "channels": [
+                "⚡・bowie-corner",
+                "🎶・music"
+              ],
+              "roles": [
+                "Friends 💕"
+              ]
+            },
+            {
+              "title": "Music, films and shows",
+              "description": "Songs, videos and watch-alongs",
+              "emoji": "🎶",
+              "channels": [
+                "🎶・music",
+                "📺・youtube",
+                "🎮・games-and-shows",
+                "🎥・Movie Night"
+              ],
+              "roles": [
+                "Friends 💕"
+              ]
+            },
+            {
+              "title": "I stream",
+              "description": "Share when you go live",
+              "emoji": "🎙",
+              "channels": [
+                "🔴・live-now",
+                "🎬・clips-and-highlights",
+                "🎙・Streaming"
+              ],
+              "roles": [
+                "Friends 💕",
+                "Streamer"
+              ]
+            },
+            {
+              "title": "I watch streams",
+              "description": "Get a ping when friends go live",
+              "emoji": "🔴",
+              "channels": [
+                "🔴・live-now",
+                "🎬・clips-and-highlights"
+              ],
+              "roles": [
+                "Friends 💕",
+                "Stream Alerts"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "op": "order_zones",
+      "names": [
+        "🛡 STAFF",
+        "👤 PERSONAL",
+        "📘 WELCOME",
+        "💬 COMMUNITY",
+        "🔴 STREAMING",
+        "⚡ BOWIE",
+        "💻 DAI'S WORKSPACE",
+        "🍃 LEAFVELLA",
+        "🤖 ASSISTANT",
+        "🔊 VOICE"
+      ]
+    }
+  ]
+}

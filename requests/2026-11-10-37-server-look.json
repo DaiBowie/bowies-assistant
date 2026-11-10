@@ -1,0 +1,15 @@
+{
+  "action": "apply",
+  "status": "waiting",
+  "asked_by": "Dai",
+  "approved_by": "Dai",
+  "note": "New server name, description and picture (in the style of the assistant's emblem)",
+  "steps": [
+    {
+      "op": "server_settings",
+      "name": "✦ Bowie's Workspace & Studio",
+      "description": "Dai's twilight corner for friends: chat, music, streams, games, and the making of Leafvella.",
+      "icon": "brand/server-icon-512.png"
+    }
+  ]
+}

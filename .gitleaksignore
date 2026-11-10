@@ -1,0 +1,2 @@
+# Sealed (encrypted) deep-dive result from 10 Nov 2026: the encrypted key looks like an API key to the scanner. Not a secret; the file has been removed.
+b5feb2532b20297a77d6ec3ad10c76055250abbe:reports/sealed/deep-dive.json:generic-api-key:1

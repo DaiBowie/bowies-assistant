@@ -1,0 +1,47 @@
+{
+  "risky_roles": {
+    "Owner": [
+      "Administrator"
+    ],
+    "Developers": [
+      "Ban",
+      "Kick",
+      "Manage messages",
+      "Timeout members"
+    ],
+    "Administrators": [
+      "Ban",
+      "Kick",
+      "Manage messages",
+      "Timeout members"
+    ],
+    "Co-owner": [
+      "Administrator"
+    ]
+  },
+  "admins_count": {
+    "Owner": 1,
+    "Bowie's Assistant": 1,
+    "Co-owner": 1
+  },
+  "bots": [
+    "Bowie Assistant"
+  ],
+  "webhooks": [
+    "Captain Hook"
+  ],
+  "never_expiring_invites": 1,
+  "automod_on": [
+    "Block Mention Spam",
+    "Block invite links",
+    "Block scam links",
+    "Block scam names and bios",
+    "Block slurs and sexual content",
+    "Block spam",
+    "Protect personal details",
+    "Watch short links"
+  ],
+  "verification_level": 3,
+  "explicit_filter": 2,
+  "mod_2fa": false
+}

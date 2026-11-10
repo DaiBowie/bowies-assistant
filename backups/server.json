@@ -1,0 +1,2064 @@
+{
+  "server": {
+    "name": "💻 𝐵𝑜𝓌𝒾𝑒's Workspace & Dev Server 🛠",
+    "description": "Bowie’s personal dev & chill space. All are welcome to connect, collaborate & hang out! Let’s create magic. 💻✨",
+    "verification_level": 3,
+    "default_message_notifications": 1,
+    "explicit_content_filter": 2,
+    "preferred_locale": "en-US",
+    "features": [
+      "ACTIVITY_FEED_DISABLED_BY_USER",
+      "MEMBER_VERIFICATION_GATE_ENABLED",
+      "COMMUNITY",
+      "MEMBER_VERIFICATION_MANUAL_APPROVAL",
+      "GUILD_SERVER_GUIDE",
+      "NEWS",
+      "SOUNDBOARD",
+      "GUILD_ONBOARDING",
+      "GUILD_ONBOARDING_HAS_PROMPTS",
+      "GUILD_ONBOARDING_EVER_ENABLED"
+    ]
+  },
+  "roles": [
+    {
+      "id": "1386390816578338947",
+      "name": "Owner",
+      "color": 3447003,
+      "hoist": true,
+      "mentionable": false,
+      "managed": false,
+      "permissions": "8",
+      "position": 13
+    },
+    {
+      "id": "1569697581183799338",
+      "name": "Bowie's Assistant",
+      "color": 4702430,
+      "hoist": true,
+      "mentionable": false,
+      "managed": true,
+      "permissions": "8",
+      "position": 11
+    },
+    {
+      "id": "1387519496146649178",
+      "name": "Administrators",
+      "color": 3066993,
+      "hoist": true,
+      "mentionable": false,
+      "managed": false,
+      "permissions": "8",
+      "position": 10
+    },
+    {
+      "id": "1386649976825712680",
+      "name": "Developers",
+      "color": 15844367,
+      "hoist": true,
+      "mentionable": false,
+      "managed": false,
+      "permissions": "2108863301550079",
+      "position": 9
+    },
+    {
+      "id": "1386403177150152926",
+      "name": "Legends 💖",
+      "color": 15158332,
+      "hoist": true,
+      "mentionable": false,
+      "managed": false,
+      "permissions": "0",
+      "position": 8
+    },
+    {
+      "id": "1498133182657204264",
+      "name": "Stream Mod ☑️",
+      "color": 10181046,
+      "hoist": true,
+      "mentionable": false,
+      "managed": false,
+      "permissions": "0",
+      "position": 7
+    },
+    {
+      "id": "1498384340827111487",
+      "name": "Twitch Subscriber: Tier 3 3️⃣",
+      "color": 0,
+      "hoist": true,
+      "mentionable": false,
+      "managed": true,
+      "permissions": "2222085186637377",
+      "position": 6
+    },
+    {
+      "id": "1498384340827111486",
+      "name": "Twitch Subscriber: Tier 2 2️⃣",
+      "color": 0,
+      "hoist": true,
+      "mentionable": false,
+      "managed": true,
+      "permissions": "2222085186637377",
+      "position": 5
+    },
+    {
+      "id": "1498384340827111485",
+      "name": "Twitch Subscriber: Tier 1 1️⃣",
+      "color": 0,
+      "hoist": true,
+      "mentionable": false,
+      "managed": true,
+      "permissions": "2222085186637377",
+      "position": 4
+    },
+    {
+      "id": "1498384340827111484",
+      "name": "Twitch Subscriber",
+      "color": 0,
+      "hoist": false,
+      "mentionable": false,
+      "managed": true,
+      "permissions": "2222085186637377",
+      "position": 3
+    },
+    {
+      "id": "1387522317088722954",
+      "name": "Friends 💕",
+      "color": 15277667,
+      "hoist": true,
+      "mentionable": false,
+      "managed": false,
+      "permissions": "0",
+      "position": 2
+    },
+    {
+      "id": "1397323923971899502",
+      "name": "💗",
+      "color": 11342935,
+      "hoist": false,
+      "mentionable": false,
+      "managed": false,
+      "permissions": "0",
+      "position": 1
+    },
+    {
+      "id": "1386390340071592047",
+      "name": "@everyone",
+      "color": 0,
+      "hoist": false,
+      "mentionable": false,
+      "managed": false,
+      "permissions": "2222085186637377",
+      "position": 0
+    }
+  ],
+  "channels": [
+    {
+      "id": "1387519068797534358",
+      "type": "category",
+      "category": null,
+      "name": "🔒│Administration - Section",
+      "position": 0,
+      "permissions": [
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "1051648"
+        }
+      ]
+    },
+    {
+      "id": "1569494927535120467",
+      "type": 20,
+      "category": null,
+      "name": "server-hub",
+      "position": 0,
+      "permissions": []
+    },
+    {
+      "id": "1386667384517038121",
+      "type": "category",
+      "category": null,
+      "name": "🛡 BOWIE SAFE GUARD",
+      "position": 1,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1024",
+          "deny": "2048"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386390344530137329",
+      "type": "category",
+      "category": null,
+      "name": "📘│Info-Zone",
+      "position": 2,
+      "permissions": [
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "1024",
+          "deny": "2048"
+        }
+      ]
+    },
+    {
+      "id": "1386673211789541497",
+      "type": "category",
+      "category": null,
+      "name": "💬│Community-Zone",
+      "position": 3,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386684045340967123",
+      "type": "category",
+      "category": null,
+      "name": "🔮 BOWIE FUN ZONE",
+      "position": 4,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386390344530137337",
+      "type": "category",
+      "category": null,
+      "name": "🔊│Voice-Zones",
+      "position": 5,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386723262150611104",
+      "type": "category",
+      "category": null,
+      "name": "🔊 | WORKSPACE VOICE ZONE",
+      "position": 6,
+      "permissions": [
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1397364782876590232",
+      "type": "category",
+      "category": null,
+      "name": "──────────────────────",
+      "position": 7,
+      "permissions": [
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "💗",
+          "allow": "1024",
+          "deny": "2048"
+        }
+      ]
+    },
+    {
+      "id": "1386675193002332332",
+      "type": "category",
+      "category": null,
+      "name": "──────────────────────",
+      "position": 11,
+      "permissions": [
+        {
+          "for": "@everyone",
+          "allow": "1024",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386666873483165878",
+      "type": "category",
+      "category": null,
+      "name": "🌟 BOWIE PUBLIC ZONE",
+      "position": 12,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386665088806817922",
+      "type": "category",
+      "category": null,
+      "name": "🛠 SETUP & LOGS",
+      "position": 13,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386665253537845268",
+      "type": "category",
+      "category": null,
+      "name": "👤 PERSONAL ZONE (SETUP)",
+      "position": 14,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386390344530137330",
+      "type": "text",
+      "category": "📘│Info-Zone",
+      "name": "📝・welcome-and-rules",
+      "position": 15,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "1024",
+          "deny": "2048"
+        }
+      ]
+    },
+    {
+      "id": "1386390344530137331",
+      "type": "text",
+      "category": "📘│Info-Zone",
+      "name": "📢・announcements",
+      "position": 16,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "1024",
+          "deny": "2048"
+        }
+      ]
+    },
+    {
+      "id": "1386390344530137332",
+      "type": "text",
+      "category": "📘│Info-Zone",
+      "name": "📚・resources",
+      "position": 17,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "1024",
+          "deny": "2048"
+        }
+      ]
+    },
+    {
+      "id": "1386390344530137334",
+      "type": "text",
+      "category": "📘│Info-Zone",
+      "name": "🆕・new-users",
+      "position": 18,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "1024",
+          "deny": "2048"
+        }
+      ]
+    },
+    {
+      "id": "1396495705853530112",
+      "type": "text",
+      "category": "📘│Info-Zone",
+      "name": "🌐│discord-invite-link",
+      "position": 19,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "1024",
+          "deny": "2048"
+        }
+      ]
+    },
+    {
+      "id": "1386390344958087178",
+      "type": "voice",
+      "category": "🔊│Voice-Zones",
+      "name": "🔈・Lounge",
+      "position": 0,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "bitrate": 64000,
+      "user_limit": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1429528402817450156",
+      "type": "voice",
+      "category": "🔊│Voice-Zones",
+      "name": "🎥・Movie Night",
+      "position": 1,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "bitrate": 64000,
+      "user_limit": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386674154689790012",
+      "type": "voice",
+      "category": "🔊│Voice-Zones",
+      "name": "🎧│private-session",
+      "position": 2,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "bitrate": 64000,
+      "user_limit": 0,
+      "permissions": [
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "1049600"
+        }
+      ]
+    },
+    {
+      "id": "1498387612417790123",
+      "type": "voice",
+      "category": "🔊│Voice-Zones",
+      "name": "🎧│twitch subs",
+      "position": 3,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "bitrate": 64000,
+      "user_limit": 0,
+      "permissions": [
+        {
+          "for": "Stream Mod ☑️",
+          "allow": "321057461628736",
+          "deny": "805306385"
+        },
+        {
+          "for": "Twitch Subscriber",
+          "allow": "673038592364096",
+          "deny": "805306385"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "1049600"
+        }
+      ]
+    },
+    {
+      "id": "1498380923794886848",
+      "type": "voice",
+      "category": "🔊│Voice-Zones",
+      "name": "🎧│tier 3 subs",
+      "position": 4,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "bitrate": 64000,
+      "user_limit": 0,
+      "permissions": [
+        {
+          "for": "Stream Mod ☑️",
+          "allow": "321057461628736",
+          "deny": "805306385"
+        },
+        {
+          "for": "@everyone",
+          "allow": "39582454368832",
+          "deny": "806355985"
+        },
+        {
+          "for": "Twitch Subscriber: Tier 3 3️⃣",
+          "allow": "39719894634048",
+          "deny": "805306385"
+        }
+      ]
+    },
+    {
+      "id": "1498380649055260843",
+      "type": "voice",
+      "category": "🔊│Voice-Zones",
+      "name": "🎧│tier 2 subs",
+      "position": 5,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "bitrate": 64000,
+      "user_limit": 0,
+      "permissions": [
+        {
+          "for": "Stream Mod ☑️",
+          "allow": "321057461628736",
+          "deny": "805306385"
+        },
+        {
+          "for": "Twitch Subscriber: Tier 2 2️⃣",
+          "allow": "39582455680576",
+          "deny": "805306385"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "1049600"
+        }
+      ]
+    },
+    {
+      "id": "1498379888674082876",
+      "type": "voice",
+      "category": "🔊│Voice-Zones",
+      "name": "🎧│tier 1 subs",
+      "position": 6,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "bitrate": 64000,
+      "user_limit": 0,
+      "permissions": [
+        {
+          "for": "Stream Mod ☑️",
+          "allow": "321057461628736",
+          "deny": "805306385"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "1049600"
+        },
+        {
+          "for": "Twitch Subscriber: Tier 1 1️⃣",
+          "allow": "39582455680576",
+          "deny": "805306385"
+        }
+      ]
+    },
+    {
+      "id": "1386467907763961936",
+      "type": "text",
+      "category": "🛠 SETUP & LOGS",
+      "name": "📁・chatgpt-blueprints-pdf-logs",
+      "position": 57,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386476983428579359",
+      "type": "text",
+      "category": "🛠 SETUP & LOGS",
+      "name": "📘・chatgpt-blueprints",
+      "position": 58,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386665897736929412",
+      "type": "text",
+      "category": "🛠 SETUP & LOGS",
+      "name": "🧾・bowie-logstore",
+      "position": 59,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386390727931465910",
+      "type": "text",
+      "category": "👤 PERSONAL ZONE (SETUP)",
+      "name": "🤖・personal-bowie-assistant-zone",
+      "position": 60,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386665298907627680",
+      "type": "text",
+      "category": "👤 PERSONAL ZONE (SETUP)",
+      "name": "🔒・bowie-locked-core",
+      "position": 61,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "a member (id kept private)",
+          "allow": "1024",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386666117593956512",
+      "type": "text",
+      "category": "👤 PERSONAL ZONE (SETUP)",
+      "name": "🪞・daily-reflections",
+      "position": 62,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386666207733874688",
+      "type": "text",
+      "category": "👤 PERSONAL ZONE (SETUP)",
+      "name": "🎶・focus-playlist",
+      "position": 63,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386666363694747719",
+      "type": "text",
+      "category": "👤 PERSONAL ZONE (SETUP)",
+      "name": "🧠・bot-memory-exports",
+      "position": 64,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386666414835896361",
+      "type": "text",
+      "category": "👤 PERSONAL ZONE (SETUP)",
+      "name": "📥・private-feedback",
+      "position": 65,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386666959445426206",
+      "type": "text",
+      "category": "🌟 BOWIE PUBLIC ZONE",
+      "name": "❓・ask-bowie",
+      "position": 52,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386667011236429924",
+      "type": "text",
+      "category": "🌟 BOWIE PUBLIC ZONE",
+      "name": "📓・assistant-user-log-🌟template",
+      "position": 53,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386667066081415219",
+      "type": "text",
+      "category": "🌟 BOWIE PUBLIC ZONE",
+      "name": "🧘・mood-check-in",
+      "position": 54,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386667110918520972",
+      "type": "text",
+      "category": "🌟 BOWIE PUBLIC ZONE",
+      "name": "💬・public-feedback",
+      "position": 55,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386667186973708453",
+      "type": "text",
+      "category": "🌟 BOWIE PUBLIC ZONE",
+      "name": "📅・daily-prompts",
+      "position": 56,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386667525873336411",
+      "type": "text",
+      "category": "🛡 BOWIE SAFE GUARD",
+      "name": "🚨・bowie-guard-alerts",
+      "position": 8,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1024",
+          "deny": "2048"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386667633038069822",
+      "type": "text",
+      "category": "🛡 BOWIE SAFE GUARD",
+      "name": "📊・bowie-watch-logs",
+      "position": 9,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1024",
+          "deny": "2048"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386667764739080232",
+      "type": "text",
+      "category": "🛡 BOWIE SAFE GUARD",
+      "name": "🕵️‍♂️・bowie-user-tracking",
+      "position": 10,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1024",
+          "deny": "2048"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386667839494160577",
+      "type": "text",
+      "category": "🛡 BOWIE SAFE GUARD",
+      "name": "🛑・bowie-admin-alerts",
+      "position": 11,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1024",
+          "deny": "2048"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386667902010265670",
+      "type": "text",
+      "category": "🛡 BOWIE SAFE GUARD",
+      "name": "💢・bowie-safeguard-feedback",
+      "position": 12,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1024",
+          "deny": "2048"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386667944477724732",
+      "type": "text",
+      "category": "🛡 BOWIE SAFE GUARD",
+      "name": "🧹・bowie-ban-cleanup",
+      "position": 13,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1024",
+          "deny": "2048"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386667992078749808",
+      "type": "text",
+      "category": "🛡 BOWIE SAFE GUARD",
+      "name": "📡・bowie-sentinel-status",
+      "position": 14,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Administrators",
+          "allow": "1024",
+          "deny": "2048"
+        },
+        {
+          "for": "Legends 💖",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "3072"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "0",
+          "deny": "3072"
+        }
+      ]
+    },
+    {
+      "id": "1386392978829869237",
+      "type": "text",
+      "category": "💬│Community-Zone",
+      "name": "💬・general",
+      "position": 20,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1387526568771063899",
+      "type": "text",
+      "category": "💬│Community-Zone",
+      "name": "🖼️・showcase",
+      "position": 21,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386390344530137335",
+      "type": "text",
+      "category": "💬│Community-Zone",
+      "name": "🗓️・meeting-plans",
+      "position": 22,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386390344530137336",
+      "type": "text",
+      "category": "💬│Community-Zone",
+      "name": "🎉・off-topic",
+      "position": 23,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386684110835028070",
+      "type": "text",
+      "category": "🔮 BOWIE FUN ZONE",
+      "name": "😂・memes-and-mayhem",
+      "position": 24,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386684144226140210",
+      "type": "text",
+      "category": "🔮 BOWIE FUN ZONE",
+      "name": "📸・funny-media-drops",
+      "position": 25,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1487938268279607336",
+      "type": "text",
+      "category": "🔮 BOWIE FUN ZONE",
+      "name": "📸・soundboard-drops",
+      "position": 26,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386684167491817542",
+      "type": "text",
+      "category": "🔮 BOWIE FUN ZONE",
+      "name": "🎮・game-and-show-talk",
+      "position": 27,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386684189658710108",
+      "type": "text",
+      "category": "🔮 BOWIE FUN ZONE",
+      "name": "🎨・silly-arts-and-edits",
+      "position": 28,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386733897953316945",
+      "type": "text",
+      "category": "🔮 BOWIE FUN ZONE",
+      "name": "📱・tiktok-hub",
+      "position": 29,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386733983009869866",
+      "type": "text",
+      "category": "🔮 BOWIE FUN ZONE",
+      "name": "📺・youtube-drops",
+      "position": 30,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386734324547715185",
+      "type": "text",
+      "category": "🔮 BOWIE FUN ZONE",
+      "name": "🧩・youtube-shorts",
+      "position": 31,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386734403069280348",
+      "type": "text",
+      "category": "🔮 BOWIE FUN ZONE",
+      "name": "🎶・shared-playlists",
+      "position": 32,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1435643514905034825",
+      "type": "text",
+      "category": "🔮 BOWIE FUN ZONE",
+      "name": "🥣・food",
+      "position": 33,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1437107224647434312",
+      "type": "text",
+      "category": "🔮 BOWIE FUN ZONE",
+      "name": "🍽️・food-recipes",
+      "position": 34,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386723399887491164",
+      "type": "voice",
+      "category": "🔊 | WORKSPACE VOICE ZONE",
+      "name": "🎧・dev-lounge",
+      "position": 7,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "bitrate": 64000,
+      "user_limit": 0,
+      "permissions": [
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386390344958087179",
+      "type": "voice",
+      "category": "🔊 | WORKSPACE VOICE ZONE",
+      "name": "📹・Meeting Room",
+      "position": 8,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "bitrate": 64000,
+      "user_limit": 0,
+      "permissions": [
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1386723631748481114",
+      "type": "voice",
+      "category": "🔊 | WORKSPACE VOICE ZONE",
+      "name": "🔐・private-dev-session",
+      "position": 9,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "bitrate": 64000,
+      "user_limit": 0,
+      "permissions": [
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Friends 💕",
+          "allow": "3072",
+          "deny": "0"
+        }
+      ]
+    },
+    {
+      "id": "1387516865462669502",
+      "type": "text",
+      "category": "🔒│Administration - Section",
+      "name": "🛡️│administrators-only",
+      "position": 0,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "1051648"
+        }
+      ]
+    },
+    {
+      "id": "1387532008669970683",
+      "type": "text",
+      "category": "🔒│Administration - Section",
+      "name": "⚙️│admin-tools",
+      "position": 1,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "1051648"
+        }
+      ]
+    },
+    {
+      "id": "1387532194427179019",
+      "type": "text",
+      "category": "🔒│Administration - Section",
+      "name": "🔐│mod-privileges",
+      "position": 2,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "1051648"
+        }
+      ]
+    },
+    {
+      "id": "1387532161166348441",
+      "type": "text",
+      "category": "🔒│Administration - Section",
+      "name": "📋│admin-logs",
+      "position": 3,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "1051648"
+        }
+      ]
+    },
+    {
+      "id": "1387532230104059914",
+      "type": "text",
+      "category": "🔒│Administration - Section",
+      "name": "📢│admin-announcements",
+      "position": 4,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "1051648"
+        }
+      ]
+    },
+    {
+      "id": "1387532251369046176",
+      "type": "text",
+      "category": "🔒│Administration - Section",
+      "name": "📝│admin-tasks",
+      "position": 5,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "1051648"
+        }
+      ]
+    },
+    {
+      "id": "1387532306809491626",
+      "type": "text",
+      "category": "🔒│Administration - Section",
+      "name": "🚨│admin-alerts",
+      "position": 6,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "1051648"
+        }
+      ]
+    },
+    {
+      "id": "1387519465712910396",
+      "type": "text",
+      "category": "🔒│Administration - Section",
+      "name": "⚠️│safety-updates",
+      "position": 7,
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "Owner",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "Administrators",
+          "allow": "1049600",
+          "deny": "0"
+        },
+        {
+          "for": "Developers",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "1051648"
+        }
+      ]
+    },
+    {
+      "id": "1397364938044866591",
+      "type": "announcement",
+      "category": "──────────────────────",
+      "name": "📁-🛠️・dev-portfolio",
+      "position": 35,
+      "topic": "“A curated shrine of DaiBowie’s legendary builds, scripts, & solo-dev triumphs.”",
+      "nsfw": false,
+      "rate_limit_per_user": 0,
+      "permissions": [
+        {
+          "for": "@everyone",
+          "allow": "0",
+          "deny": "0"
+        },
+        {
+          "for": "💗",
+          "allow": "1024",
+          "deny": "2048"
+        }
+      ]
+    }
+  ],
+  "onboarding": {
+    "enabled": true,
+    "mode": 1,
+    "default_channels": [
+      "🔊 | WORKSPACE VOICE ZONE",
+      "📺・youtube-drops",
+      "📸・funny-media-drops",
+      "💬・general",
+      "🌟 BOWIE PUBLIC ZONE",
+      "🎮・game-and-show-talk",
+      "📱・tiktok-hub",
+      "🔮 BOWIE FUN ZONE",
+      "🎨・silly-arts-and-edits",
+      "🎶・shared-playlists",
+      "💬│Community-Zone",
+      "1386721917624516708",
+      "😂・memes-and-mayhem",
+      "🧩・youtube-shorts",
+      "📝・welcome-and-rules",
+      "📢・announcements",
+      "📚・resources",
+      "📘│Info-Zone",
+      "🆕・new-users",
+      "🗓️・meeting-plans",
+      "🎉・off-topic",
+      "🔊│Voice-Zones"
+    ],
+    "prompts": [
+      {
+        "title": "What do you want to do in this community?",
+        "single_select": false,
+        "required": false,
+        "options": [
+          {
+            "title": "Collaborate on projects",
+            "description": "",
+            "roles": [
+              "Friends 💕"
+            ],
+            "channels": [
+              "💬│Community-Zone",
+              "📘│Info-Zone",
+              "🔮 BOWIE FUN ZONE",
+              "🌟 BOWIE PUBLIC ZONE",
+              "🔊│Voice-Zones"
+            ]
+          },
+          {
+            "title": "Roleplay and gaming",
+            "description": "",
+            "roles": [
+              "Friends 💕"
+            ],
+            "channels": [
+              "💬│Community-Zone",
+              "📘│Info-Zone",
+              "🔮 BOWIE FUN ZONE",
+              "🌟 BOWIE PUBLIC ZONE",
+              "🔊│Voice-Zones"
+            ]
+          },
+          {
+            "title": "Share ideas and resources",
+            "description": "",
+            "roles": [
+              "Friends 💕"
+            ],
+            "channels": [
+              "💬│Community-Zone",
+              "📘│Info-Zone",
+              "🔮 BOWIE FUN ZONE",
+              "🌟 BOWIE PUBLIC ZONE",
+              "🔊│Voice-Zones"
+            ]
+          },
+          {
+            "title": "Chat and socialize",
+            "description": "",
+            "roles": [
+              "Friends 💕"
+            ],
+            "channels": [
+              "💬│Community-Zone",
+              "📘│Info-Zone",
+              "🔮 BOWIE FUN ZONE",
+              "🌟 BOWIE PUBLIC ZONE",
+              "🔊│Voice-Zones"
+            ]
+          },
+          {
+            "title": "Get help with scripting",
+            "description": "",
+            "roles": [
+              "Friends 💕"
+            ],
+            "channels": [
+              "💬│Community-Zone",
+              "📘│Info-Zone",
+              "🔮 BOWIE FUN ZONE",
+              "🌟 BOWIE PUBLIC ZONE",
+              "🔊│Voice-Zones"
+            ]
+          },
+          {
+            "title": "Just chill and hang out",
+            "description": "",
+            "roles": [
+              "Friends 💕"
+            ],
+            "channels": [
+              "💬│Community-Zone",
+              "📘│Info-Zone",
+              "🔮 BOWIE FUN ZONE",
+              "🌟 BOWIE PUBLIC ZONE",
+              "🔊│Voice-Zones"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "rules_screening": [
+    {
+      "field_type": "TERMS",
+      "label": "Read and agree to the server rules",
+      "description": null,
+      "automations": null,
+      "required": true,
+      "values": [
+        "📌 SERVER RULES - These apply to all zones: public, private, assistant-based, and voice.",
+        "📌 Stay On Topic - Post in the correct channels. Use thread replies when needed. Ask if unsure!",
+        "📌 No Spamming or Advertising - Don’t flood channels or post unsolicited promotions unless approved.",
+        "📌 Respect All Members - No harassment, hate speech, or targeted attacks. Keep it kind, always.",
+        "📌 Keep It Safe For Work - This is a public creative zone — NSFW content, extreme language, and gore are not allowed.",
+        "📌 Use Appropriate Usernames and Avatars - Keep usernames and profile pictures respectful and appropriate for all ages.",
+        "📌 No Impersonation - Do not impersonate other members, staff, or public figures.",
+        "📌 Respect Staff & BOT Decisions - Staff & BOT decisions are final; if you disagree, reach out privately in a respectful manner.",
+        "📌 No Illegal Content or Discussions - Discussion or sharing of illegal activities or content is strictly prohibited.",
+        "📌 Follow Discord’s TOS - Discord Terms of Service apply to all users here."
+      ]
+    },
+    {
+      "field_type": "TEXT_INPUT",
+      "label": "Why do you want to join our server?",
+      "description": null,
+      "automations": null,
+      "required": true,
+      "placeholder": null
+    }
+  ],
+  "welcome_screen": null,
+  "automod": [
+    {
+      "name": "Block Mention Spam",
+      "enabled": true,
+      "event_type": 1,
+      "trigger_type": 5,
+      "trigger_metadata": {
+        "mention_total_limit": 20,
+        "mention_raid_protection_enabled": true
+      },
+      "actions": [
+        {
+          "type": 1,
+          "metadata": {}
+        }
+      ],
+      "exempt_roles": [],
+      "exempt_channels": []
+    }
+  ]
+}

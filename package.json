@@ -1,0 +1,17 @@
+{
+  "name": "bowies-assistant",
+  "private": true,
+  "description": "Bowie's Assistant: the private bot behind Bowie's Workspace & Dev Server",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test --experimental-test-coverage tests/*.test.mjs",
+    "typecheck": "tsc -p jsconfig.json",
+    "lint": "biome lint bot tests"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.6",
+    "@types/node": "22",
+    "typescript": "6.0.3"
+  }
+}
