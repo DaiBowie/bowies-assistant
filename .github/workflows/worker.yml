@@ -1,0 +1,44 @@
+name: Live Worker
+
+# Deploys the live part of the bot (slash commands, buttons, AI chat) to Cloudflare's free plan,
+# then registers the commands with Discord. Runs when the Worker or its trivia changes, or by hand.
+on:
+  push:
+    branches: [main]
+    paths: ['worker/**', 'content/trivia.json', 'content/gifs.json', 'content/ban-lines.json', 'content/escalation.json']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: worker
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Unlock the encrypted files
+        env:
+          GIT_CRYPT_KEY: ${{ secrets.GIT_CRYPT_KEY }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq git-crypt > /dev/null
+          echo "$GIT_CRYPT_KEY" | base64 -d > "$RUNNER_TEMP/repo.key"
+          git-crypt unlock "$RUNNER_TEMP/repo.key"
+          rm -f "$RUNNER_TEMP/repo.key"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - name: Tests first
+        run: node --test tests/*.test.mjs
+      - name: Deploy to Cloudflare and connect Discord
+        run: node worker/deploy.mjs
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

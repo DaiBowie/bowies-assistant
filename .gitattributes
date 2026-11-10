@@ -1,0 +1,11 @@
+# Everything in this repository is encrypted with git-crypt (AES-256).
+# Only the workflow files, this file and the short public notes stay readable,
+# because GitHub needs them to run the automation. The key lives in GitHub's
+# encrypted Actions secrets and in Dai's private vault, nowhere else.
+* filter=git-crypt diff=git-crypt
+.gitattributes !filter !diff
+.gitignore !filter !diff
+.github/** !filter !diff
+README.md !filter !diff
+SECURITY.md !filter !diff
+LICENSE !filter !diff

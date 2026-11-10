@@ -1,0 +1,10 @@
+# Keeps the GitHub Actions the bot uses up to date (free on every plan).
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: 'Actions update'
+# npm updates are off: package.json is encrypted, so Dependabot can't read it.

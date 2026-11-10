@@ -1,0 +1,40 @@
+name: Pulse
+
+# Every 10 minutes the assistant looks round the server: welcomes, starboard, counting, trivia,
+# birthdays, special dates, Easter eggs, the weekly digest and friends' uploads.
+# It never writes to this repository: its memory lives in a hidden Discord channel.
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pulse
+  cancel-in-progress: false
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Unlock the encrypted files
+        env:
+          GIT_CRYPT_KEY: ${{ secrets.GIT_CRYPT_KEY }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq git-crypt > /dev/null
+          echo "$GIT_CRYPT_KEY" | base64 -d > "$RUNNER_TEMP/repo.key"
+          git-crypt unlock "$RUNNER_TEMP/repo.key"
+          rm -f "$RUNNER_TEMP/repo.key"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - name: Pulse
+        run: node bot/run.mjs pulse
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}

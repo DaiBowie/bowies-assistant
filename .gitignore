@@ -1,0 +1,9 @@
+*.log
+.DS_Store
+.env
+deep/
+node_modules/
+
+# Never commit a private key. Only the public half of the reading key belongs here.
+*.pem
+!keys/*.pub.pem

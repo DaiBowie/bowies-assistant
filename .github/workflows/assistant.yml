@@ -1,0 +1,97 @@
+name: Bowie's Assistant
+
+# Runs when a new request is committed to requests/, every night for the backup,
+# or by hand from the Actions tab (Run workflow).
+on:
+  push:
+    branches: [main]
+    paths: ['requests/**']
+  schedule:
+    - cron: '17 3 * * *' # 03:17 UTC nightly backup
+    - cron: '7 9 * * *' # 09:07 UTC daily prompt and song of the day
+    - cron: '23 18 * * 0' # Sunday 18:23 UTC weekly check-up
+    - cron: '13 18 * * 3' # Wednesday 18:13 UTC album of the week
+    - cron: '43 17 * * 5' # Friday 17:43 UTC this-or-that poll
+  workflow_dispatch:
+    inputs:
+      job:
+        description: 'What to run'
+        type: choice
+        options: [requests, backup, daily, checkup, album, poll]
+        default: requests
+
+permissions:
+  contents: write
+
+concurrency:
+  group: assistant
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Unlock the encrypted files
+        env:
+          GIT_CRYPT_KEY: ${{ secrets.GIT_CRYPT_KEY }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq git-crypt > /dev/null
+          echo "$GIT_CRYPT_KEY" | base64 -d > "$RUNNER_TEMP/repo.key"
+          git-crypt unlock "$RUNNER_TEMP/repo.key"
+          rm -f "$RUNNER_TEMP/repo.key"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - name: Nightly backup
+        if: github.event.schedule == '17 3 * * *' || inputs.job == 'backup'
+        run: node bot/run.mjs backup
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+      - name: Daily prompt and song of the day
+        if: github.event.schedule == '7 9 * * *' || inputs.job == 'daily'
+        run: node bot/run.mjs daily
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+      - name: Weekly poll
+        if: github.event.schedule == '43 17 * * 5' || inputs.job == 'poll'
+        run: node bot/run.mjs poll
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+      - name: Album of the week
+        if: github.event.schedule == '13 18 * * 3' || inputs.job == 'album'
+        run: node bot/run.mjs album
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+      - name: Weekly check-up
+        if: github.event.schedule == '23 18 * * 0' || inputs.job == 'checkup'
+        run: node bot/run.mjs checkup
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+      - name: Run pending requests
+        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.job == 'requests')
+        run: node bot/run.mjs
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - name: Save the results back to the repository
+        if: always()
+        env:
+          PUSH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "Bowie's Assistant"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p requests reports context backups state
+          git add -A requests reports context backups state
+          if ! git diff --cached --quiet; then
+            git commit -m "Assistant results (${GITHUB_EVENT_NAME}) for ${GITHUB_SHA::7}"
+            remote="https://x-access-token:${PUSH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase "$remote" main && git push "$remote" HEAD:main && break
+              sleep $((attempt * 3))
+            done
+          fi

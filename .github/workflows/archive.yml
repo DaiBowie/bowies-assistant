@@ -1,0 +1,54 @@
+name: Weekly vault archive
+
+# Every Sunday at 03:47 UTC: a double-sealed archive of the bot's database and server backup, kept in archives/.
+on:
+  schedule:
+    - cron: '47 3 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Unlock the encrypted files
+        env:
+          GIT_CRYPT_KEY: ${{ secrets.GIT_CRYPT_KEY }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq git-crypt > /dev/null
+          echo "$GIT_CRYPT_KEY" | base64 -d > "$RUNNER_TEMP/repo.key"
+          git-crypt unlock "$RUNNER_TEMP/repo.key"
+          rm -f "$RUNNER_TEMP/repo.key"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - name: Seal the archive
+        run: node bot/archive.mjs
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - name: Save it
+        env:
+          PUSH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "Bowie's Assistant"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A archives
+          if ! git diff --cached --quiet; then
+            git commit -m "Weekly sealed archive"
+            remote="https://x-access-token:${PUSH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase "$remote" main && git push "$remote" HEAD:main && break
+              sleep $((attempt * 3))
+            done
+          fi

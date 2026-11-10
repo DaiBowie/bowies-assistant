@@ -1,0 +1,46 @@
+name: Join voice
+
+# Bowie's Assistant joins the voice channel Dai is in, unmuted: say "hey assistant" to talk to it. It follows Dai
+# and leaves when he does (up to about 6 hours). Nothing is recorded or kept.
+on:
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: 'Longest stay in minutes'
+        default: '340'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: voice
+  cancel-in-progress: true
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Unlock the encrypted files
+        env:
+          GIT_CRYPT_KEY: ${{ secrets.GIT_CRYPT_KEY }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq git-crypt > /dev/null
+          echo "$GIT_CRYPT_KEY" | base64 -d > "$RUNNER_TEMP/repo.key"
+          git-crypt unlock "$RUNNER_TEMP/repo.key"
+          rm -f "$RUNNER_TEMP/repo.key"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - name: Install the voice tools
+        working-directory: voice
+        run: npm install --no-audit --no-fund
+      - name: Join Dai's voice channel
+        working-directory: voice
+        run: node join.mjs
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          STAY_MINUTES: ${{ inputs.minutes }}
