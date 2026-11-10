@@ -12,3 +12,10 @@
 - Archive and empty zones deleted with Dai's yes, after reposting his stew recipe in food.
 - Change log in assistant-log, daily prompt and song of the day, weekly check-up.
 
+- Leafvella Tester and Leafvella Developer roles; testers added; Leafvella section filled with the website guide, films, GIFs, screens, a news feed, a tester guide and a tester forum.
+- Security system: nightly security watch, alerts to staff, lockdown and unlock, AutoMod rules, broader help posts covering 16 countries.
+- Leftovers from FiveM and HG Designs removed with Dai's yes; member counter, stickers, the bot's bio, alt text on every image, and a weekly poll.
+- GitHub's free Actions minutes ran out (Leafvella's Mac build checks used most of them). Nothing was charged: GitHub refused the jobs.
+- Dai's decision: the bot moves to a new public repo, `DaiBowie/bowies-assistant`, where Actions are free. Nothing personal goes in it; names are kept as SHA-256 codes, plain snapshots are off, and member ids are kept out of backups. The old private repo becomes the bot's vault (reading key, records, full history), with its jobs off. Private records were saved to Dai's iCloud.
+- Ready to run in the new repo: a 🔴 Streaming zone (live-now, clips, Streaming voice, the Twitch rooms, Streamer and Stream Alerts roles, onboarding choices), a tidier voice zone with a new Gaming room, one more Leafvella tester, and the new server name ✦ Bowie's Workspace & Studio, its description and its picture (a twin of the assistant's badge).
+- Future plan (after March 2027, Dai's call): a Raspberry Pi running the bot privately and Home Assistant, and a home storage station for private files, with iCloud as the off-site copy.
