@@ -9,3 +9,5 @@
 README.md !filter !diff
 SECURITY.md !filter !diff
 LICENSE !filter !diff
+.gitleaks.toml !filter !diff
+.gitleaksignore !filter !diff
