@@ -17,7 +17,7 @@ It runs entirely on free plans (Cloudflare Workers and GitHub Actions) and open-
 
 Thank you to everyone whose work this bot stands on:
 
-- **HateCheck**, Röttger et al. (2021), [paul-rottger/hatecheck-data](https://github.com/paul-rottger/hatecheck-data), CC BY 4.0: the weekly exam.
+- **HateCheck**, Röttger et al. (2021), [paul-rottger/hatecheck-data](https://github.com/paul-rottger/hatecheck-data), CC BY 4.0, and **Multilingual HateCheck** (Röttger et al., 2022), CC BY 4.0: the weekly exam.
 - **antislop-sampler**, Sam Paech, [sam-paech/antislop-sampler](https://github.com/sam-paech/antislop-sampler), Apache-2.0: the list of phrases that make writing sound machine-made.
 - **Surge AI profanity list**, [surge-ai/profanity](https://github.com/surge-ai/profanity), MIT.
 - **Discord scam domain lists**: [nikolaischunk/discord-phishing-links](https://github.com/nikolaischunk/discord-phishing-links) (MIT), [DevSpen/scam-links](https://github.com/DevSpen/scam-links) and [BuildBot42/discord-scam-links](https://github.com/BuildBot42/discord-scam-links) (public domain).
