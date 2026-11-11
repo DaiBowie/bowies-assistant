@@ -73,7 +73,10 @@ jobs:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
       - name: Run pending requests
         if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.job == 'requests')
-        run: node bot/run.mjs
+        # Fetch the latest first, so a request an earlier run already did is never done twice (11 Nov 2026).
+        run: |
+          git pull -q --ff-only origin main || true
+          node bot/run.mjs
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
