@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bowie's Assistant · Status</title>
+<meta name="description" content="Is Bowie's Assistant up? Live status of the bot for Bowie's Workspace & Studio.">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<style>
+  /* Bowie's Assistant twilight theme (brand/theme.md). Light by default, dark when the device is. */
+  :root {
+    --navy: #16336B; --deep: #0B1E45; --mid: #2A4F8F; --sky: #7E9BD6; --pale: #DCE6F8; --lilac: #AE98DD;
+    --bg: #F4F7FD; --card: #FFFFFF; --ink: #0B1E45; --soft: #4A5F87; --line: #DCE6F8;
+    --ok: #14996A; --warn: #B7791F; --bad: #D6334F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0B1E45; --card: #12285A; --ink: #EEF3FC; --soft: #A9BBDF; --line: #22427F; --ok: #3DDC97; --warn: #FFC21A; --bad: #FF6B81; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif; }
+  .sky { background: linear-gradient(160deg, var(--deep), var(--navy) 55%, var(--mid)); color: #fff; padding: 40px 16px 72px; text-align: center; position: relative; overflow: hidden; }
+  .sky::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(1.5px 1.5px at 12% 30%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 70% 20%, #fff 50%, transparent 51%), radial-gradient(1.5px 1.5px at 85% 60%, #DCE6F8 50%, transparent 51%), radial-gradient(1px 1px at 30% 75%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 55% 45%, #AE98DD 50%, transparent 51%); opacity: .8; }
+  .sky h1 { position: relative; margin: 0; font-size: 15px; letter-spacing: .28em; text-transform: uppercase; font-weight: 800; color: var(--pale); }
+  .sky .big { position: relative; margin: 14px 0 0; font-size: clamp(30px, 8vw, 44px); font-weight: 800; letter-spacing: -.01em; }
+  .sky .sub { position: relative; margin: 6px 0 0; color: var(--pale); }
+  .dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; margin-right: 10px; vertical-align: middle; background: var(--sky); box-shadow: 0 0 0 6px rgba(255,255,255,.12); }
+  .dot.ok { background: #3DDC97; } .dot.warn { background: #FFC21A; } .dot.bad { background: #FF6B81; }
+  @media (prefers-reduced-motion: no-preference) { .dot.ok { animation: pulse 2.4s ease-in-out infinite; } }
+  @keyframes pulse { 50% { box-shadow: 0 0 0 10px rgba(61,220,151,.18); } }
+  main { max-width: 640px; margin: -44px auto 40px; padding: 0 16px; position: relative; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 6px 20px; box-shadow: 0 10px 30px rgba(11,30,69,.08); }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); min-height: 44px; }
+  .row:last-child { border-bottom: 0; }
+  .row b { font-weight: 600; }
+  .row span { color: var(--soft); text-align: right; font-size: 15px; }
+  .ok { color: var(--ok) !important; } .warn { color: var(--warn) !important; } .bad { color: var(--bad) !important; }
+  p.note { color: var(--soft); font-size: 14px; text-align: center; margin: 18px 4px 0; }
+  footer { text-align: center; color: var(--soft); font-size: 13px; padding: 0 16px 32px; }
+</style>
+</head>
+<body>
+  <header class="sky">
+    <h1>✦ Bowie's Assistant ✦</h1>
+    <p class="big" id="headline"><span class="dot" id="dot"></span><span id="state">Checking…</span></p>
+    <p class="sub" id="sub">Live status, refreshed every minute</p>
+  </header>
+  <main>
+    <div class="card" role="list" aria-live="polite">
+      <div class="row" role="listitem"><b>🛡 Protector (moderation)</b><span id="protector">…</span></div>
+      <div class="row" role="listitem"><b>📡 Live connection</b><span id="live">…</span></div>
+      <div class="row" role="listitem"><b>🧠 Chat brain</b><span id="brain">…</span></div>
+      <div class="row" role="listitem"><b>🛟 Backup picture check</b><span id="eyes">…</span></div>
+      <div class="row" role="listitem"><b>💓 Pulse</b><span id="pulse">…</span></div>
+      <div class="row" role="listitem"><b>🧪 Last self-test</b><span id="selftest">…</span></div>
+      <div class="row" role="listitem"><b>🛫 Version</b><span id="version">…</span></div>
+    </div>
+    <p class="note">The bot runs on free plans, so its chat brain rests when the day's free AI allowance runs out (it comes back at midnight UTC). Moderation never stops. This page shows only whether things are working: nothing about anyone in the server.</p>
+  </main>
+  <footer>Bowie's Assistant ✦ for Bowie's Workspace &amp; Studio</footer>
+<script>
+  // Reads the bot's public /status (whether things are running, nothing personal). Text goes in with textContent only.
+  const URL_ = 'https://bowies-assistant.daibowie.workers.dev/status';
+  const $ = (id) => document.getElementById(id);
+  const set = (id, text, cls) => { const el = $(id); el.textContent = text; el.className = cls || ''; };
+  const ago = (ms) => { const m = Math.round((Date.now() - ms) / 60000); return m < 1 ? 'just now' : m < 60 ? `${m} min ago` : `${Math.round(m / 60)} h ago`; };
+  async function refresh() {
+    try {
+      const s = await (await fetch(URL_, { cache: 'no-store' })).json();
+      const all = s.ok && s.live && s.brain;
+      $('dot').className = `dot ${s.ok ? (all ? 'ok' : 'warn') : 'bad'}`;
+      $('state').textContent = !s.ok ? 'Something is wrong' : all ? 'All systems go' : 'Up and protecting';
+      $('sub').textContent = `Last checked ${new Date(s.checked).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}`;
+      set('protector', s.ok ? 'Running' : 'Not answering', s.ok ? 'ok' : 'bad');
+      set('live', s.live ? 'Instant' : 'Every-minute backup', s.live ? 'ok' : 'warn');
+      set('brain', s.brain ? 'Awake' : 'Recharging till midnight UTC', s.brain ? 'ok' : 'warn');
+      set('eyes', s.backupEyes ? 'Ready' : 'Not checked in', s.backupEyes ? 'ok' : 'warn');
+      set('pulse', s.pulseMins < 30 ? `${s.pulseMins} min ago` : `Quiet ${s.pulseMins} min`, s.pulseMins < 30 ? 'ok' : 'warn');
+      set('selftest', s.selftest ? `${s.selftest} passed, ${ago(s.selftestAt)}` : 'Not run yet');
+      set('version', s.version ? `${s.version}${s.since ? `, live ${ago(Date.parse(s.since))}` : ''}` : 'Unknown');
+    } catch {
+      $('dot').className = 'dot bad'; $('state').textContent = 'Can’t reach the bot';
+      $('sub').textContent = 'It may be restarting, or your connection dropped. Trying again shortly.';
+    }
+  }
+  refresh(); setInterval(refresh, 60000);
+</script>
+</body>
+</html>

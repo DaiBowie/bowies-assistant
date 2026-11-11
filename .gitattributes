@@ -12,3 +12,4 @@ LICENSE !filter !diff
 .gitleaks.toml !filter !diff
 .gitleaksignore !filter !diff
 **/.gitkeep !filter !diff
+docs/** !filter !diff
