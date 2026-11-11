@@ -6,4 +6,4 @@ useDefault = true
 
 [allowlist]
 description = "Sealed (encrypted) files"
-paths = ['''^reports/sealed/.*\.json$''', '''^backups/.*\.sealed\.json$''', '''^archives/.*\.sealed\.json$''']
+paths = ['''^reports/sealed/.*\.json$''', '''^backups/.*\.sealed\.json$''', '''^archives/.*\.sealed\.json$''', '''^keys/.*\.sealed\.json$''']
