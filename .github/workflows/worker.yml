@@ -7,6 +7,9 @@ on:
     branches: [main]
     paths: ['worker/**', 'brand/alerts/**', 'content/expiries.json', 'content/trivia.json', 'content/gifs.json', 'content/ban-lines.json', 'content/escalation.json']
   workflow_dispatch:
+  # Every Monday at 4am: a fresh deploy so the open-source scam, slur and lookalike lists stay up to date.
+  schedule:
+    - cron: '7 4 * * 1'
 
 permissions:
   contents: read
@@ -18,6 +21,8 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # only to publish the release notes for each tested version
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -56,7 +61,18 @@ jobs:
       - name: Deploy guard (test the new version, roll back if needed)
         run: node worker/verify.mjs after
         env:
-          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message || 'Weekly refresh of the open-source lists' }}
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      # A numbered release on GitHub for every version that passed its tests (what changed, from the commit).
+      - name: Release notes
+        if: github.event_name == 'push'
+        run: |
+          tag="v$(date -u +%Y.%m.%d)-${GITHUB_SHA::7}"
+          gh release create "$tag" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title "$tag" --notes "${COMMIT_MESSAGE}
+
+          Tested by the deploy guard before going live." || true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
