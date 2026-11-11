@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: read
+  actions: read # the watchdog reads how the bot's other jobs went
 
 concurrency:
   group: pulse
@@ -38,3 +39,4 @@ jobs:
         run: node bot/run.mjs pulse
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
