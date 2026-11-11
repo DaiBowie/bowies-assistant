@@ -42,6 +42,8 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
+      - name: Install the open-source checkers (NSFWJS and Detoxify), once per run
+        run: timeout 10m npm i --no-save --no-audit --no-fund nsfwjs@4 @tensorflow/tfjs-node@4 @huggingface/transformers@3 || echo "::warning::open-source checkers didn't install; the live bot's own checks carry on"
       - name: Pulse every 10 minutes for about 5.5 hours
         run: |
           end=$(( $(date +%s) + 330 * 60 ))
