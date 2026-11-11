@@ -10,6 +10,9 @@ To anyone else, the files are unreadable. The key lives in GitHub's encrypted Ac
 - **Looks after itself:** it tests itself every morning and before every update goes live, saves a database restore point, and rolls a bad update back by itself.
 - **Gets better on its own:** nightly training on its own chats, a weekly exam on a research test set, and lessons from the server's staff.
 - **Keeps things private:** everything about a person is encrypted with their own key; private chats are never read by anyone else.
+- **Answers for real:** weather, scores, news, money, TV, space and more, looked up live from free public services, with a designed card.
+- **Has its own app:** the Workspace OS, a small web app for the server (guide, rules, channels, events, Ask, Space, free games, emoji, stickers and the soundboard) in twelve languages, with a living twilight sky, Light and Dark modes, accessibility settings and offline support. No accounts, cookies or tracking; settings stay on the phone.
+- **Looks the part:** its own twilight emoji (still and animated), stickers and original soundboard sounds, all made for the server in one style.
 
 It runs entirely on free plans (Cloudflare Workers and GitHub Actions) and open-source tools.
 
@@ -27,6 +30,8 @@ Thank you to everyone whose work this bot stands on:
 - **malware-filter** by curbengh ([urlhaus-filter](https://gitlab.com/malware-filter/urlhaus-filter), [phishing-filter](https://gitlab.com/malware-filter/phishing-filter)), built from abuse.ch URLhaus (CC0) and community phishing feeds: malware and gaming/crypto phishing domains.
 - **Unicode confusables** (UTS #39), [unicode.org](https://www.unicode.org/Public/security/latest/confusables.txt), Unicode License.
 - **sinking.yachts** scam database, **GamerPower** free games and **The Space Devs** Launch Library.
+- Live answers from free public services: **Open-Meteo** (weather and places, CC BY 4.0), **Frankfurter** (European Central Bank rates), **BBC News** feeds, **ESPN** and **TheSportsDB**, **Wikipedia** (CC BY-SA), **TVMaze**, **MusicBrainz**, **Open Library**, **TheMealDB**, **Free Dictionary**, **Nager.Date**, **CoinGecko**, **NASA** (picture of the day), **Where The ISS At**, **CheapShark** and **icanhazdadjoke**.
+- The **Workspace OS** is built on the shell of **Leafvella 2.0** (the owner's own app) and uses the **International Meteor Organization**'s meteor shower calendar.
 - Open-source AI models on Cloudflare Workers AI (Llama, Llama Guard, Gemma, Qwen, Whisper, BGE and others), each under its own licence.
 
 Found a security problem? See [SECURITY.md](SECURITY.md).
