@@ -5,7 +5,7 @@ name: Live Worker
 on:
   push:
     branches: [main]
-    paths: ['worker/**', 'brand/alerts/**', 'content/expiries.json', 'content/trivia.json', 'content/gifs.json', 'content/ban-lines.json', 'content/escalation.json']
+    paths: ['worker/**', 'os/**', 'brand/alerts/**', 'content/expiries.json', 'content/trivia.json', 'content/gifs.json', 'content/ban-lines.json', 'content/escalation.json']
   workflow_dispatch:
   # Every Monday at 4am: a fresh deploy so the open-source scam, slur and lookalike lists stay up to date.
   schedule:
