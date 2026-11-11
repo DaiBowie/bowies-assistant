@@ -1,16 +1,18 @@
 name: Pulse
 
 # Every 10 minutes the assistant looks round the server: welcomes, starboard, counting, trivia,
-# birthdays, special dates, Easter eggs, the weekly digest and friends' uploads.
+# birthdays, special dates, Easter eggs, the weekly digest and friends' uploads, plus the watchdog's checks.
 # It never writes to this repository: its memory lives in a hidden Discord channel.
+# GitHub often skips frequent schedules (11 Nov 2026: twice since midnight), so one run now works every 10 minutes
+# for about 5.5 hours, then starts the next run itself (allowed for workflow_dispatch). The hourly schedule is only a
+# backup starter, and the Worker's watchdog alarms if the pulse ever goes quiet.
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '7 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: read
-  actions: read # the watchdog reads how the bot's other jobs went
 
 concurrency:
   group: pulse
@@ -19,7 +21,10 @@ concurrency:
 jobs:
   pulse:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 345
+    permissions:
+      contents: read
+      actions: write # read how the other jobs went (watchdog), and start the next pulse run
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -35,8 +40,20 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
-      - name: Pulse
-        run: node bot/run.mjs pulse
+      - name: Pulse every 10 minutes for about 5.5 hours
+        run: |
+          end=$(( $(date +%s) + 330 * 60 ))
+          while [ "$(date +%s)" -lt "$end" ]; do
+            start=$(date +%s)
+            git pull -q --ff-only origin main 2>/dev/null || true
+            timeout 8m node bot/run.mjs pulse || echo "::warning::pulse run failed, trying again in 10 minutes"
+            sleep $(( 600 - ($(date +%s) - start) > 0 ? 600 - ($(date +%s) - start) : 1 ))
+          done
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
+      - name: Start the next pulse run
+        if: always()
+        run: gh workflow run pulse.yml --repo "$GITHUB_REPOSITORY" --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
