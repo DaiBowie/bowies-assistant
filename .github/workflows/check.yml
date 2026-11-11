@@ -25,7 +25,9 @@ jobs:
         env:
           GIT_CRYPT_KEY: ${{ secrets.GIT_CRYPT_KEY }}
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq git-crypt > /dev/null
+          # Ubuntu's mirror can be down (11 Nov 2026), so: try it a few times, then build git-crypt 0.8.0 from its source.
+          (sudo apt-get update -qq -o Acquire::Retries=3 && sudo apt-get install -y -qq -o Acquire::Retries=3 git-crypt > /dev/null) \
+            || (git clone -q --depth 1 --branch 0.8.0 https://github.com/AGWA/git-crypt "$RUNNER_TEMP/gc" && make -s -C "$RUNNER_TEMP/gc" && sudo make -s -C "$RUNNER_TEMP/gc" install PREFIX=/usr/local)
           echo "$GIT_CRYPT_KEY" | base64 -d > "$RUNNER_TEMP/repo.key"
           git-crypt unlock "$RUNNER_TEMP/repo.key"
           rm -f "$RUNNER_TEMP/repo.key"
@@ -78,7 +80,9 @@ jobs:
         env:
           GIT_CRYPT_KEY: ${{ secrets.GIT_CRYPT_KEY }}
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq git-crypt > /dev/null
+          # Ubuntu's mirror can be down (11 Nov 2026), so: try it a few times, then build git-crypt 0.8.0 from its source.
+          (sudo apt-get update -qq -o Acquire::Retries=3 && sudo apt-get install -y -qq -o Acquire::Retries=3 git-crypt > /dev/null) \
+            || (git clone -q --depth 1 --branch 0.8.0 https://github.com/AGWA/git-crypt "$RUNNER_TEMP/gc" && make -s -C "$RUNNER_TEMP/gc" && sudo make -s -C "$RUNNER_TEMP/gc" install PREFIX=/usr/local)
           echo "$GIT_CRYPT_KEY" | base64 -d > "$RUNNER_TEMP/repo.key"
           git-crypt unlock "$RUNNER_TEMP/repo.key"
           rm -f "$RUNNER_TEMP/repo.key"
