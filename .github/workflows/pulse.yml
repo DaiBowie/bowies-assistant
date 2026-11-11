@@ -50,6 +50,7 @@ jobs:
             git pull -q --ff-only origin main 2>/dev/null || true
             timeout 8m node bot/run.mjs pulse || echo "::warning::pulse run failed, trying again in 10 minutes"
             timeout 5m node bot/run.mjs eyes || echo "::warning::backup picture check failed"
+            timeout 5m node bot/run.mjs ears || echo "::warning::backup text check failed"
             sleep $(( 600 - ($(date +%s) - start) > 0 ? 600 - ($(date +%s) - start) : 1 ))
           done
         env:

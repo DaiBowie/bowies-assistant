@@ -23,6 +23,7 @@ Thank you to everyone whose work this bot stands on:
 - **Discord scam domain lists**: [nikolaischunk/discord-phishing-links](https://github.com/nikolaischunk/discord-phishing-links) (MIT), [DevSpen/scam-links](https://github.com/DevSpen/scam-links) and [BuildBot42/discord-scam-links](https://github.com/BuildBot42/discord-scam-links) (public domain).
 - **OpenPhish community feed**, [openphish/public_feed](https://github.com/openphish/public_feed), free for non-commercial use under [its terms](https://openphish.com/terms.html).
 - **NSFWJS**, Infinite Red, [infinitered/nsfwjs](https://github.com/infinitered/nsfwjs), MIT: the backup picture check.
+- **Detoxify**, Unitary, [unitaryai/detoxify](https://github.com/unitaryai/detoxify), Apache-2.0, run with **Transformers.js** (Hugging Face, Apache-2.0): the backup text check.
 - **Unicode confusables** (UTS #39), [unicode.org](https://www.unicode.org/Public/security/latest/confusables.txt), Unicode License.
 - **sinking.yachts** scam database, **GamerPower** free games and **The Space Devs** Launch Library.
 - Open-source AI models on Cloudflare Workers AI (Llama, Llama Guard, Gemma, Qwen, Whisper, BGE and others), each under its own licence.
