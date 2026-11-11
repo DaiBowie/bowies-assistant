@@ -11,3 +11,4 @@ SECURITY.md !filter !diff
 LICENSE !filter !diff
 .gitleaks.toml !filter !diff
 .gitleaksignore !filter !diff
+**/.gitkeep !filter !diff
