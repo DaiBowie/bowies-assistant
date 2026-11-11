@@ -1,9 +1,9 @@
-name: Weekly vault archive
+name: Daily vault archive
 
-# Every Sunday at 03:47 UTC: a double-sealed archive of the bot's database and server backup, kept in archives/.
+# Every day at 03:47 UTC (Dai, 11 Nov 2026: "make full backups etc of everything"): a double-sealed archive of the bot's database and server backup, kept in archives/.
 on:
   schedule:
-    - cron: '47 3 * * 0'
+    - cron: '47 3 * * *'
   workflow_dispatch:
 
 permissions:
@@ -47,7 +47,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A archives
           if ! git diff --cached --quiet; then
-            git commit -m "Weekly sealed archive"
+            git commit -m "Daily sealed archive"
             remote="https://x-access-token:${PUSH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
             for attempt in 1 2 3 4 5; do
               git pull --rebase "$remote" main && git push "$remote" HEAD:main && break

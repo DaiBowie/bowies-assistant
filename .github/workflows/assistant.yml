@@ -91,7 +91,7 @@ jobs:
           git config user.name "Bowie's Assistant"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           mkdir -p requests reports context backups state
-          git add -A requests reports context backups state
+          git add -A requests reports context backups state keys/memory-key.sealed.json
           if ! git diff --cached --quiet; then
             git commit -m "Assistant results (${GITHUB_EVENT_NAME}) for ${GITHUB_SHA::7}"
             remote="https://x-access-token:${PUSH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
