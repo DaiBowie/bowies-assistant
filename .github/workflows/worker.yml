@@ -18,7 +18,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -36,6 +36,13 @@ jobs:
           node-version: 22
       - name: Tests first
         run: node --test tests/*.test.mjs
+      # The deploy guard: note the live version and save a database restore point first.
+      - name: Deploy guard (before)
+        run: node worker/verify.mjs before
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       - name: Deploy to Cloudflare and connect Discord
         run: node worker/deploy.mjs
         env:
@@ -43,3 +50,10 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           PULSE_TRIGGER_TOKEN: ${{ secrets.PULSE_TRIGGER_TOKEN }}
+      # Then test the new version for real, and roll back by itself if something important broke.
+      - name: Deploy guard (test the new version, roll back if needed)
+        run: node worker/verify.mjs after
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
