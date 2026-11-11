@@ -1,9 +1,11 @@
 # Gitleaks settings: the default rules, plus one allowance.
 # Sealed files (backups and Claude's look-ins) hold encrypted data, and the wrapped key inside looks like an API key
 # to the scanner. They are encrypted on purpose and contain no secrets, so they're allowed. Everything else is scanned.
+# keys/restore-memory-key.json (11 Nov 2026, master key repair) was git-crypt encrypted in the repo and deleted in the
+# same run; CI scans the unlocked checkout, so its history entry is allowed by exact path.
 [extend]
 useDefault = true
 
 [allowlist]
 description = "Sealed (encrypted) files"
-paths = ['''^reports/sealed/.*\.json$''', '''^backups/.*\.sealed\.json$''', '''^archives/.*\.sealed\.json$''', '''^keys/.*\.sealed\.json$''']
+paths = ['''^reports/sealed/.*\.json$''', '''^backups/.*\.sealed\.json$''', '''^archives/.*\.sealed\.json$''', '''^keys/.*\.sealed\.json$''', '''^keys/restore-memory-key\.json$''']
