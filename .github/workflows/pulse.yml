@@ -1,14 +1,13 @@
 name: Pulse
 
-# Every 10 minutes the assistant looks round the server: welcomes, starboard, counting, trivia,
-# birthdays, special dates, Easter eggs, the weekly digest and friends' uploads, plus the watchdog's checks.
+# Short scheduled checks (12 Nov 2026): the community jobs moved to the live bot on Cloudflare, because GitHub's terms rule
+# out Actions as an always-on service. This keeps only checking and backup work: the watchdog (is the live bot up, did the
+# backups and deploys run), the seasonal server icon and event covers, and the open-source backup picture and text checks.
 # It never writes to this repository: its memory lives in a hidden Discord channel.
-# GitHub often skips frequent schedules (11 Nov 2026: twice since midnight), so one run now works every 10 minutes
-# for about 5.5 hours, then starts the next run itself (allowed for workflow_dispatch). The hourly schedule is only a
-# backup starter, and the Worker's watchdog alarms if the pulse ever goes quiet.
+# GitHub can delay or drop busy schedules; that's fine now (the Worker only worries after 3 quiet hours).
 on:
   schedule:
-    - cron: '7 * * * *'
+    - cron: '3-59/10 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -21,10 +20,10 @@ concurrency:
 jobs:
   pulse:
     runs-on: ubuntu-latest
-    timeout-minutes: 345
+    timeout-minutes: 20
     permissions:
       contents: read
-      actions: write # read how the other jobs went (watchdog), and start the next pulse run
+      actions: read # read how the other jobs went (watchdog)
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -44,22 +43,11 @@ jobs:
           node-version: 22
       - name: Install the open-source checkers (NSFWJS and Detoxify), once per run
         run: timeout 10m npm i --no-save --no-audit --no-fund nsfwjs@4 @tensorflow/tfjs-node@4 @huggingface/transformers@3 || echo "::warning::open-source checkers didn't install; the live bot's own checks carry on"
-      - name: Pulse every 10 minutes for about 5.5 hours
+      - name: One round of checks
         run: |
-          end=$(( $(date +%s) + 330 * 60 ))
-          while [ "$(date +%s)" -lt "$end" ]; do
-            start=$(date +%s)
-            git pull -q --ff-only origin main 2>/dev/null || true
-            timeout 8m node bot/run.mjs pulse || echo "::warning::pulse run failed, trying again in 10 minutes"
-            timeout 5m node bot/run.mjs eyes || echo "::warning::backup picture check failed"
-            timeout 5m node bot/run.mjs ears || echo "::warning::backup text check failed"
-            sleep $(( 600 - ($(date +%s) - start) > 0 ? 600 - ($(date +%s) - start) : 1 ))
-          done
+          timeout 8m node bot/run.mjs pulse || echo "::warning::pulse run failed, trying again next time"
+          timeout 4m node bot/run.mjs eyes || echo "::warning::backup picture check failed"
+          timeout 4m node bot/run.mjs ears || echo "::warning::backup text check failed"
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
-      - name: Start the next pulse run
-        if: always()
-        run: gh workflow run pulse.yml --repo "$GITHUB_REPOSITORY" --ref main
-        env:
-          GH_TOKEN: ${{ github.token }}
