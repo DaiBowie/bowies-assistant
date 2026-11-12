@@ -18,13 +18,13 @@ server. If it's off, slow or broken, Cloudflare answers within seconds. The Disc
 **1. On the new machine.** Install **Raspberry Pi OS (64-bit)** with Raspberry Pi Imager, or Debian/Ubuntu on a mini
 PC. Connect it to the internet, ideally by cable, with an SSD.
 
-**2. In Workspace Control on your iPhone.** Open **Home server**, then tap **Make the pairing line**. Tap **Copy the
+**2. In Workspace HQ on your iPhone.** Open **Home server**, then tap **Make the pairing line**. Tap **Copy the
 line**. It works once, for 30 minutes.
 
 **3. Back on the machine.** Open the Terminal, paste the line and press Enter. It takes 30–90 minutes on a Pi (it builds
 the engines for that exact processor and downloads about 20 GB of models). You can leave it.
 
-**4. In Workspace Control.** When Home server shows **Online**, switch on **Use the home server**. That's it.
+**4. In Workspace HQ.** When Home server shows **Online**, switch on **Use the home server**. That's it.
 
 ## What gets installed (all free, all open source)
 | Part | Software | Licence |
@@ -44,7 +44,7 @@ Profiles are picked by memory: `small` (8–11 GB), `pi16` (12–27 GB), `big` (
 - The gateway keeps the bot's long instructions cached between replies (llama.cpp `cache_prompt` and `--cache-reuse`).
   This is the biggest speed-up on a small computer.
 - Quick yes/no checks use the tiny brain; models stay loaded all the time.
-- Run a **speed test** from Workspace Control. The real numbers are measured on the day, not guessed.
+- Run a **speed test** from Workspace HQ. The real numbers are measured on the day, not guessed.
 
 ## On the machine itself
 `ziggy status` · `ziggy logs` · `ziggy restart` · `ziggy bench` · `ziggy update` · `ziggy uninstall`
