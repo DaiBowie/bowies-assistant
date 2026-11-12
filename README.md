@@ -10,9 +10,12 @@ To anyone else, the files are unreadable. The key lives in GitHub's encrypted Ac
 - **Looks after itself:** it tests itself every morning and before every update goes live, saves a database restore point, and rolls a bad update back by itself.
 - **Gets better on its own:** nightly training on its own chats, a weekly exam on a research test set, lessons from the server's staff, and a library of worked examples and facts written by its teacher (Claude), reviewed every day.
 - **Brings people together:** levels with streaks, achievements and a weekly crown, party games (would you rather, truth or dare, 20 questions), fair giveaways, event sign-ups, your own temporary voice room, roast battles, and news, YouTube and Bluesky feeds.
-- **Keeps things private:** everything about a person is encrypted with their own key; private chats are never read by anyone else.
+- **Keeps things private:** everything about a person is encrypted with their own key; working notes, owners' settings, sign-in sessions, alert subscriptions and jobs for the home server are encrypted too (AES-256-GCM); private chats are never read by anyone else.
 - **Answers for real:** weather, scores, news, money, TV, space and more, looked up live from free public services, with a designed card.
 - **Has its own app:** the Workspace OS, a small web app for the server (guide, rules, channels, events, Ask, Space, free games, emoji, stickers and the soundboard) in fourteen languages (including Welsh, Irish, Scottish Gaelic, Arabic and Urdu), with a living twilight sky, Light and Dark modes, accessibility settings and offline support. No accounts, cookies or tracking; settings stay on the phone.
+- **Has an owners' app too:** Workspace HQ, the same app with an owners' side behind Face ID (passkeys): the bot's status, safety switches, every command, a line to its teacher, and alerts for serious problems only.
+- **Ready for home hardware:** a one-line kit for a Raspberry Pi or mini PC that runs its chat, voice, hearing and training on open-source models at home, while Cloudflare stays the always-on front door.
+- **Can visit friends' servers:** as a companion that only chats, plays and joins voice, never moderating or changing anything there, and only where its owners approve.
 - **Looks the part:** its own twilight emoji (still and animated), stickers and original soundboard sounds, all made for the server in one style.
 
 It runs entirely on free plans (Cloudflare Workers and GitHub Actions) and open-source tools.
@@ -33,6 +36,7 @@ Thank you to everyone whose work this bot stands on:
 - **sinking.yachts** scam database, **GamerPower** free games and **The Space Devs** Launch Library.
 - Live answers from free public services: **Open-Meteo** (weather and places, CC BY 4.0), **Frankfurter** (European Central Bank rates), **BBC News** feeds, **ESPN** and **TheSportsDB**, **Wikipedia** (CC BY-SA), **TVMaze**, **MusicBrainz**, **Open Library**, **TheMealDB**, **Free Dictionary**, **Nager.Date**, **CoinGecko**, **NASA** (picture of the day), **Where The ISS At**, **CheapShark**, **icanhazdadjoke**, **NOAA** (aurora), **USGS** (earthquakes), **Jolpica** (Formula 1), **wttr.in** and **ExchangeRate-API** (backups), and the public **Bluesky** and **YouTube** feeds.
 - The **Workspace OS** is built on the shell of **Leafvella 2.0** (the owner's own app) and uses the **International Meteor Organization**'s meteor shower calendar.
+- The home server kit uses **llama.cpp** and **whisper.cpp** (MIT), **Qwen3** models (Apache-2.0), **Whisper** (MIT), **Kokoro-82M** (Apache-2.0) through **kokoro-onnx** (MIT), and Cloudflare's **cloudflared** (Apache-2.0).
 - Open-source AI models on Cloudflare Workers AI (Llama, Llama Guard, Gemma, Qwen, Whisper, BGE and others), each under its own licence.
 
 Found a security problem? See [SECURITY.md](SECURITY.md).
