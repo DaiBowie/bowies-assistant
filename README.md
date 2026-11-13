@@ -34,10 +34,10 @@ A private Discord assistant for one friends' server: **a security and admin bot,
 | **Stays honest** | Logic traps and "agree with everything" games get a straight answer, never a cave-in. |
 | **Chats like a friend** | Reads the room, remembers you (if you want it to), matches your style, joins voice chat with its own voice, and fires back in roast battles. |
 | **Brings people together** | Levels with streaks, achievements and a weekly crown, party games (would you rather, truth or dare, 20 questions), fair giveaways, event sign-ups, your own temporary voice room, and news, YouTube and Bluesky feeds. |
-| **Answers for real** | Weather, scores, news, money, TV, space and more, looked up live from free public services, with a designed card. |
+| **Answers for real** | Weather, scores, news, money, TV, space and more, looked up live from free public services, with a designed card. Picks his own lookups for questions it hasn't seen before, digs deeper into Wikipedia, checks his own numbers, and if he really doesn't know, says so and gets back to you with the answer later. |
 | **Its own app** | The **Workspace OS**: a small web app for the server (guide, rules, channels, events, Ask, Space, free games, emoji, stickers and the soundboard) in fourteen languages (including Welsh, Irish, Scottish Gaelic, Arabic and Urdu), with a living twilight sky, Light and Dark modes, accessibility settings and offline support. No accounts, cookies or tracking. |
 | **A staff app too** | **Workspace HQ**: the same app with a staff side behind Face ID (passkeys). What each person can do follows their real Discord role, checked every time. Alerts for serious problems only. |
-| **Fits each member** | Their own choices on one panel (what it remembers, how it chats, "don't talk to me", forget me) and their own time zone. Every GIF and picture it posts carries a description for screen readers. |
+| **Fits each member** | Their own choices on one panel (what it remembers, how it chats, "don't talk to me", "keep it clean with me", forget me) and their own time zone. Every GIF and picture it posts carries a description for screen readers. |
 | **Looks the part** | Its own twilight emoji, stickers and original soundboard sounds, plus a bright variety pack (moods, gaming, food, animals and weather) that it adds by itself as boosts unlock room. |
 
 ## Not built yet
