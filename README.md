@@ -72,7 +72,7 @@ Thank you to everyone whose work this bot stands on:
 - **Unicode confusables** (UTS #39), [unicode.org](https://www.unicode.org/Public/security/latest/confusables.txt), Unicode License.
 - **sinking.yachts** scam database, **GamerPower** free games and **The Space Devs** Launch Library.
 - Live answers from free public services: **Open-Meteo** (weather and places, CC BY 4.0), **Frankfurter** (European Central Bank rates), **BBC News** feeds, **ESPN** and **TheSportsDB**, **Wikipedia** (CC BY-SA), **TVMaze**, **MusicBrainz**, **Open Library**, **TheMealDB**, **Free Dictionary**, **Nager.Date**, **CoinGecko**, **NASA** (picture of the day), **Where The ISS At**, **CheapShark**, **icanhazdadjoke**, **NOAA** (aurora), **USGS** (earthquakes), **Jolpica** (Formula 1), **wttr.in** and **ExchangeRate-API** (backups), and the public **Bluesky** and **YouTube** feeds.
-- The **Workspace OS** is built on the shell of **Leafvella 2.0** (the owner's own app) and uses the **International Meteor Organization**'s meteor shower calendar.
+- The **Workspace OS** is built on the shell of the **Leafvella** demo (Leafvella is the owner's own app) and uses the **International Meteor Organization**'s meteor shower calendar.
 - The home server kit uses **llama.cpp** and **whisper.cpp** (MIT), **Qwen3** models (Apache-2.0), **Whisper** (MIT), **Kokoro-82M** (Apache-2.0) through **kokoro-onnx** (MIT), and Cloudflare's **cloudflared** (Apache-2.0).
 - Open-source AI models on Cloudflare Workers AI (Llama, Llama Guard, Gemma, Qwen, Whisper, BGE and others), each under its own licence.
 
