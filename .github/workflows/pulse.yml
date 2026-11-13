@@ -43,6 +43,14 @@ jobs:
           node-version: 22
       - name: Install the open-source checkers (NSFWJS and Detoxify), once per run
         run: timeout 10m npm i --no-save --no-audit --no-fund nsfwjs@4 @tensorflow/tfjs-node@4 @huggingface/transformers@3 || echo "::warning::open-source checkers didn't install; the live bot's own checks carry on"
+      - name: Switch scheduled workflows back on if GitHub paused them
+        # GitHub pauses schedules in a public repo after 60 days with no activity; this turns them straight back on.
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for id in $(gh api "repos/$GITHUB_REPOSITORY/actions/workflows" -q '.workflows[] | select(.state == "disabled_inactivity") | .id' 2>/dev/null); do
+            gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/$id/enable" && echo "Switched workflow $id back on"
+          done
       - name: Catch up the daily archive if GitHub skipped it
         # GitHub skipped the 03:47 archive on 11 and 13 Nov 2026, so the pulse starts it (once a day, from 04:00 UTC).
         env:
@@ -58,6 +66,9 @@ jobs:
           timeout 8m node bot/run.mjs pulse || echo "::warning::pulse run failed, trying again next time"
           timeout 4m node bot/run.mjs eyes || echo "::warning::backup picture check failed"
           timeout 4m node bot/run.mjs ears || echo "::warning::backup text check failed"
+          timeout 2m node bot/run.mjs limits || echo "::warning::free plan watch failed"
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
