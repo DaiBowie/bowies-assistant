@@ -5,7 +5,7 @@ name: Bowie's Assistant
 on:
   push:
     branches: [main]
-    paths: ['requests/**']
+    paths: ['requests/**', 'content/guides/**']
   schedule:
     - cron: '17 3 * * *' # 03:17 UTC nightly backup
     - cron: '7 9 * * *' # 09:07 UTC daily prompt and song of the day
