@@ -61,3 +61,6 @@ users. The bot itself never needs it.
 - **Speeds and timings** (build time, words a second, voice speed) are only known once it runs on the real hardware.
 - The picture-check model and Kokoro's Arm wheels are set up by the installer. If either won't install on the chosen
   hardware, the installer says so and the bot keeps using Cloudflare for that part.
+
+## Ziggy's voice
+Dai chose it on 13 Nov 2026: Piper's British English VCTK voice (CC BY 4.0), speaker p258, pace 1.05, smoothed, no effects, polished (silence trimmed, soft fades, steady volume). `piper_voice.py` makes it; `voice_server.py` uses it and falls back to the Kokoro blend if Piper isn't installed. Settings: `profiles.json` → `voice.chosen`.

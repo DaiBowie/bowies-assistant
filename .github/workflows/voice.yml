@@ -40,6 +40,13 @@ jobs:
       - name: Install the voice tools
         working-directory: voice
         run: npm install --no-audit --no-fund
+      - name: Ziggy's chosen voice (Piper VCTK p258), optional
+        continue-on-error: true
+        run: |
+          python3 -m pip install -q piper-tts numpy
+          mkdir -p "$RUNNER_TEMP/piper"
+          for f in "" ".json"; do curl -sSLf -o "$RUNNER_TEMP/piper/en_GB-vctk-medium.onnx$f" "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_GB/vctk/medium/en_GB-vctk-medium.onnx$f"; done
+          echo "PIPER_DIR=$RUNNER_TEMP/piper" >> "$GITHUB_ENV"
       - name: Join Dai's voice channel
         working-directory: voice
         run: node join.mjs
