@@ -23,7 +23,7 @@ jobs:
     timeout-minutes: 20
     permissions:
       contents: read
-      actions: read # read how the other jobs went (watchdog)
+      actions: write # read how the other jobs went (watchdog), and start the daily archive if GitHub skipped it
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -43,6 +43,16 @@ jobs:
           node-version: 22
       - name: Install the open-source checkers (NSFWJS and Detoxify), once per run
         run: timeout 10m npm i --no-save --no-audit --no-fund nsfwjs@4 @tensorflow/tfjs-node@4 @huggingface/transformers@3 || echo "::warning::open-source checkers didn't install; the live bot's own checks carry on"
+      - name: Catch up the daily archive if GitHub skipped it
+        # GitHub skipped the 03:47 archive on 11 and 13 Nov 2026, so the pulse starts it (once a day, from 04:00 UTC).
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          today=$(date -u +%F)
+          if [ "$(date -u +%-H)" -ge 4 ] && [ ! -f "archives/$today.sealed.json" ]; then
+            n=$(gh run list -R "$GITHUB_REPOSITORY" -w archive.yml -L 10 --json createdAt -q "[.[] | select(.createdAt >= \"${today}T00:00\")] | length" || echo 1)
+            if [ "$n" = "0" ]; then gh workflow run archive.yml -R "$GITHUB_REPOSITORY" && echo "Started today's archive"; fi
+          fi
       - name: One round of checks
         run: |
           timeout 8m node bot/run.mjs pulse || echo "::warning::pulse run failed, trying again next time"
