@@ -22,6 +22,7 @@ on:
 
 permissions:
   contents: write
+  actions: write # start a pulse or daily archive GitHub skipped (13 Nov 2026)
 
 concurrency:
   group: assistant
@@ -99,4 +100,19 @@ jobs:
               git pull --rebase "$remote" main && git push "$remote" HEAD:main && break
               sleep $((attempt * 3))
             done
+          fi
+      - name: Start a skipped pulse or daily archive
+        # GitHub's scheduler drops busy runs (13 Nov 2026: no pulse for 3 hours, no archive on 11 or 13 Nov), so every
+        # run of this workflow also starts one that is overdue. The Worker does the same every minute once the
+        # pulse trigger token is set.
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          last=$(gh run list -R "$GITHUB_REPOSITORY" -w pulse.yml -L 1 --json createdAt -q '.[0].createdAt' || echo "")
+          if [ -z "$last" ] || [ $(( $(date -u +%s) - $(date -u -d "$last" +%s) )) -gt 1800 ]; then gh workflow run pulse.yml -R "$GITHUB_REPOSITORY" && echo "Started the pulse"; fi
+          today=$(date -u +%F)
+          if [ "$(date -u +%-H)" -ge 4 ] && [ ! -f "archives/$today.sealed.json" ]; then
+            n=$(gh run list -R "$GITHUB_REPOSITORY" -w archive.yml -L 10 --json createdAt -q "[.[] | select(.createdAt >= \"${today}T00:00\")] | length" || echo 1)
+            if [ "$n" = "0" ]; then gh workflow run archive.yml -R "$GITHUB_REPOSITORY" && echo "Started today's archive"; fi
           fi
