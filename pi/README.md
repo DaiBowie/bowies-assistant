@@ -5,7 +5,7 @@ Built 12 Nov 2026, so that when the hardware arrives "it's done and ready" (Dai)
 
 ## What it does
 - **Everyday chat at home, unlimited.** No daily allowance. Cloudflare's free AI is kept for the hardest calls.
-- **Voice and hearing at home:** Kokoro's soft British male voice (`bm_george`, speed 0.9) and Whisper.
+- **Voice and hearing at home:** Ziggy's own voice: a blend of Kokoro's British male voices (`bm_george` 70%, `bm_fable` 30% to start), paced by mood (slower late at night), a faint starry shimmer and names said right, all set in `profiles.json` → `voice.ziggy` (Dai, 13 Nov 2026: "A nod to Ziggy"; never made from any real person's recordings) and Whisper.
 - **Nightly training at home** with the sharper brain.
 - **Backup safety checks** for pictures and text while Cloudflare's AI is out (moved off GitHub).
 - **Companion mode** for other servers can be switched on once this is running.
