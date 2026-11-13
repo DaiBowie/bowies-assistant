@@ -17,7 +17,7 @@ To anyone else, the files are unreadable. The key lives in GitHub's encrypted Ac
 - **Fits each member:** their own choices on one panel (what it remembers, how it chats, "don't talk to me", forget me) and their own time zone for replies, reminders and the morning briefing. Members can flag a reply that felt off, and every GIF and picture it posts carries a description for screen readers.
 - **Ready for home hardware:** a one-line kit for a Raspberry Pi or mini PC that runs its chat, voice, hearing and training on open-source models at home, while Cloudflare stays the always-on front door.
 - **Can visit friends' servers (planned, switched off):** as a companion that only chats, plays and joins voice, never moderating or changing anything there, in at most 20 servers its owners approve, each starting small with that server's owner in charge.
-- **Looks the part:** its own twilight emoji (still and animated), stickers and original soundboard sounds, all made for the server in one style.
+- **Looks the part:** its own twilight emoji (still and animated), stickers and original soundboard sounds, all made for the server in one style, plus a bright variety pack (moods, gaming, food, animals and weather) that it adds by itself as boosts unlock room.
 
 It runs entirely on free plans (Cloudflare Workers and GitHub Actions) and open-source tools.
 

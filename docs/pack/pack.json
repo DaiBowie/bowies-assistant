@@ -1,0 +1,385 @@
+{
+ "version": "2026-11-13",
+ "emojis": [
+  {
+   "name": "lol",
+   "file": "emojis/lol.png"
+  },
+  {
+   "name": "sob",
+   "file": "emojis/sob.png"
+  },
+  {
+   "name": "heart_eyes",
+   "file": "emojis/heart_eyes.png"
+  },
+  {
+   "name": "shook",
+   "file": "emojis/shook.png"
+  },
+  {
+   "name": "smug",
+   "file": "emojis/smug.png"
+  },
+  {
+   "name": "grr",
+   "file": "emojis/grr.png"
+  },
+  {
+   "name": "sleepy",
+   "file": "emojis/sleepy.png"
+  },
+  {
+   "name": "cool",
+   "file": "emojis/cool.png"
+  },
+  {
+   "name": "blushing",
+   "file": "emojis/blushing.png"
+  },
+  {
+   "name": "nervous",
+   "file": "emojis/nervous.png"
+  },
+  {
+   "name": "party",
+   "file": "emojis/party.png"
+  },
+  {
+   "name": "hmm",
+   "file": "emojis/hmm.png"
+  },
+  {
+   "name": "pleading",
+   "file": "emojis/pleading.png"
+  },
+  {
+   "name": "wink",
+   "file": "emojis/wink.png"
+  },
+  {
+   "name": "ghosty",
+   "file": "emojis/ghosty.png"
+  },
+  {
+   "name": "yes",
+   "file": "emojis/yes.png"
+  },
+  {
+   "name": "nope",
+   "file": "emojis/nope.png"
+  },
+  {
+   "name": "brb",
+   "file": "emojis/brb.png"
+  },
+  {
+   "name": "omg",
+   "file": "emojis/omg.png"
+  },
+  {
+   "name": "peek",
+   "file": "emojis/peek.png"
+  },
+  {
+   "name": "press_f",
+   "file": "emojis/press_f.png"
+  },
+  {
+   "name": "gamepad",
+   "file": "emojis/gamepad.png"
+  },
+  {
+   "name": "joystick",
+   "file": "emojis/joystick.png"
+  },
+  {
+   "name": "d20",
+   "file": "emojis/d20.png"
+  },
+  {
+   "name": "pixel_heart",
+   "file": "emojis/pixel_heart.png"
+  },
+  {
+   "name": "coin",
+   "file": "emojis/coin.png"
+  },
+  {
+   "name": "potion",
+   "file": "emojis/potion.png"
+  },
+  {
+   "name": "loot",
+   "file": "emojis/loot.png"
+  },
+  {
+   "name": "level_up",
+   "file": "emojis/level_up.png"
+  },
+  {
+   "name": "lag",
+   "file": "emojis/lag.png"
+  },
+  {
+   "name": "afk",
+   "file": "emojis/afk.png"
+  },
+  {
+   "name": "gg_wp",
+   "file": "emojis/gg_wp.png"
+  },
+  {
+   "name": "pizza",
+   "file": "emojis/pizza.png"
+  },
+  {
+   "name": "taco",
+   "file": "emojis/taco.png"
+  },
+  {
+   "name": "ramen",
+   "file": "emojis/ramen.png"
+  },
+  {
+   "name": "donut",
+   "file": "emojis/donut.png"
+  },
+  {
+   "name": "boba",
+   "file": "emojis/boba.png"
+  },
+  {
+   "name": "coffee",
+   "file": "emojis/coffee.png"
+  },
+  {
+   "name": "cookie",
+   "file": "emojis/cookie.png"
+  },
+  {
+   "name": "avocado",
+   "file": "emojis/avocado.png"
+  },
+  {
+   "name": "strawberry",
+   "file": "emojis/strawberry.png"
+  },
+  {
+   "name": "ice_cream",
+   "file": "emojis/ice_cream.png"
+  },
+  {
+   "name": "burger",
+   "file": "emojis/burger.png"
+  },
+  {
+   "name": "fries",
+   "file": "emojis/fries.png"
+  },
+  {
+   "name": "kitty",
+   "file": "emojis/kitty.png"
+  },
+  {
+   "name": "puppy",
+   "file": "emojis/puppy.png"
+  },
+  {
+   "name": "froggy",
+   "file": "emojis/froggy.png"
+  },
+  {
+   "name": "bunny",
+   "file": "emojis/bunny.png"
+  },
+  {
+   "name": "bear",
+   "file": "emojis/bear.png"
+  },
+  {
+   "name": "ducky",
+   "file": "emojis/ducky.png"
+  },
+  {
+   "name": "axolotl",
+   "file": "emojis/axolotl.png"
+  },
+  {
+   "name": "penguin",
+   "file": "emojis/penguin.png"
+  },
+  {
+   "name": "foxy",
+   "file": "emojis/foxy.png"
+  },
+  {
+   "name": "bee",
+   "file": "emojis/bee.png"
+  },
+  {
+   "name": "owlet",
+   "file": "emojis/owlet.png"
+  },
+  {
+   "name": "sunny",
+   "file": "emojis/sunny.png"
+  },
+  {
+   "name": "rainbow",
+   "file": "emojis/rainbow.png"
+  },
+  {
+   "name": "stormy",
+   "file": "emojis/stormy.png"
+  },
+  {
+   "name": "snowman",
+   "file": "emojis/snowman.png"
+  },
+  {
+   "name": "brolly",
+   "file": "emojis/brolly.png"
+  },
+  {
+   "name": "toasty",
+   "file": "emojis/toasty.png"
+  }
+ ],
+ "animated": [
+  {
+   "name": "lol_shake",
+   "file": "animated/lol_shake.gif"
+  },
+  {
+   "name": "love_beat",
+   "file": "animated/love_beat.gif"
+  },
+  {
+   "name": "party_pop",
+   "file": "animated/party_pop.gif"
+  },
+  {
+   "name": "sob_flow",
+   "file": "animated/sob_flow.gif"
+  },
+  {
+   "name": "sleepy_zzz",
+   "file": "animated/sleepy_zzz.gif"
+  },
+  {
+   "name": "kitty_bop",
+   "file": "animated/kitty_bop.gif"
+  },
+  {
+   "name": "ducky_waddle",
+   "file": "animated/ducky_waddle.gif"
+  },
+  {
+   "name": "froggy_hop",
+   "file": "animated/froggy_hop.gif"
+  },
+  {
+   "name": "coin_spin",
+   "file": "animated/coin_spin.gif"
+  },
+  {
+   "name": "d20_roll",
+   "file": "animated/d20_roll.gif"
+  },
+  {
+   "name": "gamepad_rumble",
+   "file": "animated/gamepad_rumble.gif"
+  },
+  {
+   "name": "coffee_steam",
+   "file": "animated/coffee_steam.gif"
+  },
+  {
+   "name": "snowfall",
+   "file": "animated/snowfall.gif"
+  },
+  {
+   "name": "sunny_spin",
+   "file": "animated/sunny_spin.gif"
+  }
+ ],
+ "stickers": [
+  {
+   "name": "LMAO",
+   "description": "A laughing face, crying with laughter",
+   "tags": "😂",
+   "file": "stickers/lol_sticker.png"
+  },
+  {
+   "name": "Nope Duck",
+   "description": "A little yellow duck saying nope",
+   "tags": "🦆",
+   "file": "stickers/nope_sticker.png"
+  },
+  {
+   "name": "Snack Break",
+   "description": "A smiling slice of pizza: snack break",
+   "tags": "🍕",
+   "file": "stickers/snack_break.png"
+  },
+  {
+   "name": "Lag",
+   "description": "A wifi signal down to one bar: lag",
+   "tags": "📶",
+   "file": "stickers/lag_sticker.png"
+  },
+  {
+   "name": "Good Morning",
+   "description": "A smiling sun saying good morning",
+   "tags": "☀️",
+   "file": "stickers/good_morning.png"
+  },
+  {
+   "name": "Love It",
+   "description": "A face with heart eyes: love it",
+   "tags": "😍",
+   "file": "stickers/love_it.png"
+  }
+ ],
+ "sounds": [
+  {
+   "name": "Quack",
+   "emoji": "🦆",
+   "file": "sounds/quack.mp3"
+  },
+  {
+   "name": "Boing",
+   "emoji": "🌀",
+   "file": "sounds/boing.mp3"
+  },
+  {
+   "name": "Level Up",
+   "emoji": "🆙",
+   "file": "sounds/level_up.mp3"
+  },
+  {
+   "name": "Coin",
+   "emoji": "🪙",
+   "file": "sounds/coin_get.mp3"
+  },
+  {
+   "name": "Sad Trombone",
+   "emoji": "📉",
+   "file": "sounds/sad_trombone.mp3"
+  },
+  {
+   "name": "Crickets",
+   "emoji": "🦗",
+   "file": "sounds/crickets.mp3"
+  },
+  {
+   "name": "Drumroll",
+   "emoji": "🥁",
+   "file": "sounds/drumroll.mp3"
+  }
+ ],
+ "perks": {
+  "banner": "perks/banner.png"
+ }
+}
