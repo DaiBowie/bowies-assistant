@@ -38,6 +38,7 @@ A private Discord assistant for one friends' server: **a security and admin bot,
 | **Its own app** | The **Workspace OS**: a small web app for the server (guide, rules, channels, events, Ask, Space, free games, emoji, stickers and the soundboard) in fourteen languages (including Welsh, Irish, Scottish Gaelic, Arabic and Urdu), with a living twilight sky, Light and Dark modes, accessibility settings and offline support. No accounts, cookies or tracking. |
 | **A staff app too** | **Workspace HQ**: the same app with a staff side behind Face ID (passkeys). What each person can do follows their real Discord role, checked every time. Alerts for serious problems only. |
 | **Fits each member** | Their own choices on one panel (what it remembers, how it chats, "don't talk to me", "keep it clean with me", forget me) and their own time zone. Every GIF and picture it posts carries a description for screen readers. |
+| **Celebrates the seasons** | Christmas, New Year, Halloween, Bonfire Night, Pal-entine's, Easter, spring and summer: seasonal banners and zone frames, an advent calendar with 24 doors, a digital Secret Santa, snowball fights, egg and pumpkin hunts, showcase competitions, countdowns and a yearly Workspace Wrapped. All digital, nothing to buy. |
 | **Looks the part** | Its own twilight emoji, stickers and original soundboard sounds, plus a bright variety pack (moods, gaming, food, animals and weather) that it adds by itself as boosts unlock room. |
 
 ## Not built yet
@@ -48,7 +49,7 @@ A private Discord assistant for one friends' server: **a security and admin bot,
 ## How it is built
 | Folder | What it is |
 |---|---|
-| `worker/` | The live bot on Cloudflare: `worker.js` (the engine), `moderation.js` (spotting rules), `comebacks.js`, `games.js`, `lookup.js` (live answers), `upkeep.js` (the jobs that look after itself), `control.js` (Workspace HQ), `site.js` and `meet.js` (its pages), `deploy.mjs` and `verify.mjs` (the deploy guard). |
+| `worker/` | The live bot on Cloudflare: `worker.js` (the engine), `moderation.js` (spotting rules), `comebacks.js`, `games.js`, `lookup.js` (live answers), `upkeep.js` (the jobs that look after itself), `seasons.js` (the seasons and holidays), `control.js` (Workspace HQ), `site.js` and `meet.js` (its pages), `deploy.mjs` and `verify.mjs` (the deploy guard). |
 | `bot/` | Jobs run by GitHub Actions: requests, the pulse, backups, archives, the weekly exam and the free plan watch. |
 | `content/` | Its words: worked examples, facts, the character bible, live test cases, GIFs and lines. |
 | `os/` | The Workspace OS and Workspace HQ. |

@@ -1,0 +1,52 @@
+{
+ "stickers": [
+  {
+   "name": "Cosy Season",
+   "file": "seasonal/cosy_season.png",
+   "tags": "☃️",
+   "description": "A snowman in a scarf and bobble hat",
+   "season": "festive"
+  },
+  {
+   "name": "Cheers!",
+   "file": "seasonal/cheers.png",
+   "tags": "🎉",
+   "description": "A party popper bursting with confetti",
+   "season": "festive"
+  },
+  {
+   "name": "Boo!",
+   "file": "seasonal/boo.png",
+   "tags": "👻",
+   "description": "A friendly little ghost",
+   "season": "halloween"
+  },
+  {
+   "name": "Egg-cellent",
+   "file": "seasonal/egg_cellent.png",
+   "tags": "🥚",
+   "description": "A happy painted Easter egg",
+   "season": "easter"
+  }
+ ],
+ "sounds": [
+  {
+   "name": "Sleigh Bells",
+   "file": "seasonal/sleigh_bells.mp3",
+   "emoji": "🛷",
+   "season": "festive"
+  },
+  {
+   "name": "Party Popper",
+   "file": "seasonal/party_popper.mp3",
+   "emoji": "🎉",
+   "season": "festive"
+  },
+  {
+   "name": "Spooky Ooo",
+   "file": "seasonal/spooky_ooo.mp3",
+   "emoji": "👻",
+   "season": "halloween"
+  }
+ ]
+}
