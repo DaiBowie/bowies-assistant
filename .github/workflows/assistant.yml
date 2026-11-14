@@ -109,6 +109,8 @@ jobs:
               sleep $((attempt * 3))
             done
           fi
+          # Tags a request pinned (tag_commit, e.g. a known-good snapshot) go up too.
+          git push -q "https://x-access-token:${PUSH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" --tags 2>/dev/null || true
       - name: Start a skipped pulse or daily archive
         # GitHub's scheduler drops busy runs (13 Nov 2026: no pulse for 3 hours, no archive on 11 or 13 Nov), so every
         # run of this workflow also starts one that is overdue. The Worker does the same every minute once the
