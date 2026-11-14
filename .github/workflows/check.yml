@@ -36,6 +36,13 @@ jobs:
           node-version: 22
       - name: Install checking tools
         run: npm install --no-audit --no-fund --ignore-scripts
+      - name: Package security (known holes in the packages the bot runs)
+        # Dependabot can't read the encrypted package list, so the check runs here, after unlocking (14 Nov 2026).
+        # A critical hole stops the run; a high one is a warning so it's fixed without blocking an urgent safety fix.
+        run: |
+          npm audit --omit=dev || true
+          if ! npm audit --omit=dev --audit-level=critical > /dev/null; then echo "::error::A package the bot runs has a critical security hole (see the list above)"; exit 1; fi
+          if ! npm audit --omit=dev --audit-level=high > /dev/null; then echo "::warning::A package the bot runs has a high-severity security advisory (see the list above)"; fi
       - name: Syntax
         run: for f in bot/*.mjs; do node --check "$f"; done
       - name: Tests (with coverage)
