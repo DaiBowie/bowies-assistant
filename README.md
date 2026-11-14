@@ -28,8 +28,8 @@ A private Discord assistant for one friends' server: **a security and admin bot,
 ## What it does
 | Area | What it does |
 |---|---|
-| **Protects the server** | Scam links and fake verification tricks (30,000+ known scam sites), slurs and hate, raids, account takeovers ("nukes"), spam, impersonators, picture checks, a honeypot for spam bots, and a ladder of consequences that gets firmer each time. |
-| **Looks like one product** | Every card in the server wears its own banner and the same layout, from the logs to the status board; the Leafvella section matches the Leafvella website. |
+| **Protects the server** | Scam links and fake verification tricks (30,000+ known scam sites, even when spelled out letter by letter), slurs and hate (disguised ones too), raids, account takeovers ("nukes"), spam, impersonators, picture checks, a honeypot for spam bots, and a ladder of consequences that gets firmer each time. |
+| **Looks like one product** | Every card in the server wears its own banner and the same layout, from the logs to the status board; the Leafvella section and the testers' zone match the Leafvella website, with the films and screens in tidy grids. Every picture, banner and film is checked by its actual contents before it is posted and again in a daily check, so a broken picture never goes up. |
 | **Looks after itself** | Tests itself every morning and before every update goes live, saves a database restore point, and rolls a bad update back by itself. Every week it audits the server (flagging, never deleting); after every update it rewrites its own command guides; every day it reads Discord's developer change log and watches its free plan limits; it restarts a skipped backup, switches paused schedules back on, and once a month proves its backups really open. |
 | **Gets better on its own** | Nightly training on its own chats, a weekly exam on a research test set, lessons from the server's staff, and a daily list of moments to learn from, read by its teacher (Claude), who writes the fixes by hand. |
 | **Stays honest** | Logic traps and "agree with everything" games get a straight answer, never a cave-in. |
@@ -56,7 +56,7 @@ A private Discord assistant for one friends' server: **a security and admin bot,
 | `os/` | The Workspace OS and Workspace HQ. |
 | `brand/` | The emblem, theme, banners, emoji, stickers, sounds and the tools that make them. |
 | `pi/` | The home server kit. |
-| `tests/` | Over 100 checks, including a red team of disguised slurs, scams and tricks, run before every update. |
+| `tests/` | Nearly 200 checks, including a red team of disguised slurs, scams and tricks, run before every update. |
 | `docs/` | The readable parts: the public status page, the variety pack and these banners. |
 
 ## Built with open-source work
