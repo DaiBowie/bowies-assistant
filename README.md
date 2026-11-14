@@ -3,7 +3,7 @@
 
 # Bowie's Assistant ✦ Ziggy
 
-A private Discord assistant for one friends' server: **a security and admin bot, and a friend to talk to.** Twilight-themed, encrypted from end to end, and running entirely on free plans.
+A private Discord assistant for one friends' server: **a security and admin bot, and a friend to talk to.** Twilight-themed, encrypted from end to end, and built to run on free plans.
 
 **Live:** [status](https://bowies-assistant.daibowie.workers.dev/status) · [meet Ziggy](https://bowies-assistant.daibowie.workers.dev/meet) · [the Workspace OS](https://bowies-assistant.daibowie.workers.dev/os) · **Status:** live in one server, invite only.
 
@@ -11,7 +11,7 @@ A private Discord assistant for one friends' server: **a security and admin bot,
 - **Everything here is encrypted** (git-crypt, AES-256): the code, its settings, its word lists, its records and its history. Only the files GitHub needs to run it stay readable (`.github/`, this README, `SECURITY.md` and the public pages in `docs/`).
 - **The key** lives in GitHub's encrypted Actions secrets and in the owner's private vault, nowhere else. To anyone else, the files are unreadable.
 - **Nothing personal is ever stored here:** no member names, ids, chat or pinned posts. Counts only.
-- **Free by design:** Cloudflare Workers (the always-on bot), GitHub Actions (building, testing, backups) and open-source models. No paid plans, no cards, no sign-ups.
+- **Free by design:** Cloudflare Workers (the always-on bot), GitHub Actions (building, testing, backups) and open-source models. No sign-ups. The one exception, ever: a single month of Cloudflare's Workers Paid in November 2026 to finish the big build, already cancelled, with the bot capping its own spending; it's back on the free plan from 27 November.
 
 ## Who makes it
 - **Dai** (the owner) designs it, sets the rules and tests it in his own server.
@@ -29,6 +29,7 @@ A private Discord assistant for one friends' server: **a security and admin bot,
 | Area | What it does |
 |---|---|
 | **Protects the server** | Scam links and fake verification tricks (30,000+ known scam sites), slurs and hate, raids, account takeovers ("nukes"), spam, impersonators, picture checks, a honeypot for spam bots, and a ladder of consequences that gets firmer each time. |
+| **Looks like one product** | Every card in the server wears its own banner and the same layout, from the logs to the status board; the Leafvella section matches the Leafvella website. |
 | **Looks after itself** | Tests itself every morning and before every update goes live, saves a database restore point, and rolls a bad update back by itself. Every week it audits the server (flagging, never deleting); after every update it rewrites its own command guides; every day it reads Discord's developer change log and watches its free plan limits; it restarts a skipped backup, switches paused schedules back on, and once a month proves its backups really open. |
 | **Gets better on its own** | Nightly training on its own chats, a weekly exam on a research test set, lessons from the server's staff, and a daily list of moments to learn from, read by its teacher (Claude), who writes the fixes by hand. |
 | **Stays honest** | Logic traps and "agree with everything" games get a straight answer, never a cave-in. |
