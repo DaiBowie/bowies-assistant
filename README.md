@@ -78,4 +78,8 @@ Thank you to everyone whose work this bot stands on:
 - The home server kit uses **llama.cpp** and **whisper.cpp** (MIT), **Qwen3** models (Apache-2.0), **Whisper** (MIT), **Kokoro-82M** (Apache-2.0) through **kokoro-onnx** (MIT), and Cloudflare's **cloudflared** (Apache-2.0).
 - Open-source AI models on Cloudflare Workers AI (Llama, Llama Guard, Gemma, Qwen, Whisper, BGE and others), each under its own licence.
 
+## A tribute, not the real thing
+
+Ziggy is not Ziggy Stardust and not David Bowie, and never claims to be. His name is a nod and a tribute to Bowie; he's his own character, with his own personality. This project is not affiliated with, connected to or endorsed by David Bowie, his estate, his family or his record labels. Ziggy and the server's own designs never use Bowie's lyrics, artwork or photos of him, and Ziggy's voice is never an imitation of his; members share and talk about his music as fans, through official links. "Bowie" in Bowie's Workspace and Bowie's Assistant is also the owner's username, DaiBowie.
+
 Found a security problem? See [SECURITY.md](SECURITY.md).
