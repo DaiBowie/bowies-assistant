@@ -26,6 +26,13 @@ the engines for that exact processor and downloads about 20 GB of models). You c
 
 **4. In Workspace HQ.** When Home server shows **Online**, switch on **Use the home server**. That's it.
 
+## On a Mac (Wolf's Mac mini, until the Pi arrives)
+The same pairing line works on a Mac with Apple silicon and 16 GB or more: it hands over to `install-mac.sh`. Because a
+Mac is usually someone's everyday computer, it's kept light: the everyday brain, hearing and Ziggy's voice only (no big
+night brain; nightly training stays on Cloudflare), at background priority, about 10 GB on disk. It installs Homebrew
+(free) if it isn't there, runs everything as its own hidden user (`_ziggy`) that can't see your files, and only changes
+sleep settings if you say yes when it asks. Takes about 15–30 minutes. To remove it all: `sudo ziggy uninstall`.
+
 ## What gets installed (all free, all open source)
 | Part | Software | Licence |
 |---|---|---|
