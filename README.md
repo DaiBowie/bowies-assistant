@@ -50,7 +50,7 @@ A private Discord assistant for one friends' server: **a security and admin bot,
 ## How it is built
 | Folder | What it is |
 |---|---|
-| `worker/` | The live bot on Cloudflare: `worker.js` (the engine), `moderation.js` (spotting rules), `comebacks.js`, `games.js`, `lookup.js` (live answers), `upkeep.js` (the jobs that look after itself), `seasons.js` (the seasons and holidays), `control.js` (Workspace HQ), `site.js` and `meet.js` (its pages), `deploy.mjs` and `verify.mjs` (the deploy guard). |
+| `worker/` | The live bot on Cloudflare: `worker.js` (the engine), `moderation.js` (spotting rules), `comebacks.js`, `games.js`, `lookup.js` (live answers), `upkeep.js` (the jobs that look after itself), `seasons.js` (the seasons and holidays), `card.js` and `art-manifest.js` (one card builder for every card: banners on top from `docs/cards`, versioned by their contents, one sign-off, and a check that reads posts back), `control.js` (Workspace HQ), `site.js` and `meet.js` (its pages), `deploy.mjs` and `verify.mjs` (the deploy guard). |
 | `bot/` | Jobs run by GitHub Actions: requests, the pulse, backups, archives, the weekly exam and the free plan watch. |
 | `content/` | Its words: worked examples, facts, the character bible, live test cases, GIFs and lines. |
 | `os/` | The Workspace OS and Workspace HQ. |
