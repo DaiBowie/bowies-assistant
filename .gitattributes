@@ -6,9 +6,9 @@
 .gitattributes !filter !diff
 .gitignore !filter !diff
 .github/** !filter !diff
-README.md !filter !diff
-SECURITY.md !filter !diff
-LICENSE !filter !diff
+/README.md !filter !diff
+/SECURITY.md !filter !diff
+/LICENSE !filter !diff
 .gitleaks.toml !filter !diff
 .gitleaksignore !filter !diff
 **/.gitkeep !filter !diff
